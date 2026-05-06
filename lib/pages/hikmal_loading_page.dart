@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:flutter/material.dart';
 
 class HikmalLoadingPage extends StatefulWidget {
@@ -15,10 +16,10 @@ class _HikmalLoadingPageState extends State<HikmalLoadingPage> {
   @override
   void initState() {
     loadTime = Timer.periodic(Duration(seconds: 3), (timer) {
-      //Navigator.pushReplacement(
-        //context,
-        //MaterialPageRoute(),
-      //);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => ChlaLoginPage(),),
+      );
     });
     loadbool=Timer.periodic(Duration(milliseconds: 1), (timer) {
       setState(() {
