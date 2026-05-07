@@ -24,56 +24,67 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
             width: double.infinity,
             color: Colors.blue.shade800,
             padding: EdgeInsets.all(20),
-            child: Column(
+            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'LOGIN',
-                  style: TextStyle(color: Colors.white, fontSize: 30),
-                ),
-                Row(
+                Column(
                   children: [
-                    Text('Name/Email:', style: TextStyle(color: Colors.white)),
-                  ],
-                ),
-                TextField(
-                  controller: nama,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey.shade200,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+                    Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Nama/Email:',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    TextField(
+                      controller: nama,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Text('Password:', style: TextStyle(color: Colors.white)),
-                  ],
-                ),
-                TextField(
-                  controller: password,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey.shade200,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+                    Row(
+                      children: [
+                        Text(
+                          'Password:',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    TextField(
+                      controller: password,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Daftar?',
+                        'daftar?',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -83,9 +94,9 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                         'Login',
                         style: TextStyle(color: Colors.white),
                       ),
-                      style: ButtonStyle(
+                      style: ButtonStyle(elevation: WidgetStatePropertyAll(5),shadowColor: WidgetStatePropertyAll(Colors.black),
                         backgroundColor: WidgetStatePropertyAll(
-                          Colors.lightBlueAccent,
+                          Colors.lightBlueAccent, 
                         ),
                       ),
                     ),
