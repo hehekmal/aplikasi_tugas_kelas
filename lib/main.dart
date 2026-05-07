@@ -1,6 +1,6 @@
-import 'package:aplikasi_tugas_kelas/pages/chla_daftar_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_loading_page.dart';
-import 'package:aplikasi_tugas_kelas/pages/hikmal_login_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
