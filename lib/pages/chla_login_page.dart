@@ -56,7 +56,6 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                   ],
                 ),
                 TextField(
-
                   controller: password,
                   decoration: InputDecoration(
                     fillColor: Colors.grey.shade200,
