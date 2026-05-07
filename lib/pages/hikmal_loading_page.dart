@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/chla_daftar_page.dart';
 import 'package:flutter/material.dart';
 
 class HikmalLoadingPage extends StatefulWidget {
