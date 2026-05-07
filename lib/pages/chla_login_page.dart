@@ -19,10 +19,9 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
           width: double.infinity,
           color: Colors.white,
           padding: EdgeInsets.all(20),
-          child: Container(
+          child: Container(decoration: BoxDecoration(color: Colors.blue.shade800,borderRadius:  BorderRadius.circular(25)),
             height: double.infinity,
             width: double.infinity,
-            color: Colors.blue.shade800,
             padding: EdgeInsets.all(20),
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -33,7 +32,7 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
                     ),
                     Row(
-                      children: [
+                      children: [SizedBox(width: 25,),
                         Text(
                           'Nama/Email:',
                           style: TextStyle(color: Colors.white),
@@ -47,15 +46,15 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                         fillColor: Colors.grey.shade200,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           ),
                         ),
                       ),
                     ),
                     Row(
-                      children: [
+                      children: [SizedBox(width: 25,),
                         Text(
                           'Password:',
                           style: TextStyle(color: Colors.white),
@@ -69,9 +68,9 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                         fillColor: Colors.grey.shade200,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           ),
                         ),
                       ),
