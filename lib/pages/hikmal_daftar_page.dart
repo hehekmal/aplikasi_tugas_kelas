@@ -12,6 +12,18 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController passwordConfirm = TextEditingController();
+  TextEditingController kelas = TextEditingController();
+  late String kelaspilihan = 'kelas';
+  int a = 0;
+  List<DropdownMenuEntry<int>> h = [
+    DropdownMenuEntry(value: 0, label: '10 RPL 1'),
+    DropdownMenuEntry(value: 1, label: '10 RPL 2'),
+    DropdownMenuEntry(value: 2, label: '10 TKJ 1'),
+    DropdownMenuEntry(value: 3, label: '10 TKJ 2'),
+    DropdownMenuEntry(value: 4, label: '10 TKJ 3'),
+    DropdownMenuEntry(value: 5, label: '10 TKJ 4'),
+    DropdownMenuEntry(value: 6, label: '10 SIJA'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,6 +139,28 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                           ),
                         ),
                       ),
+                    ),SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        DropdownMenu(
+                          textStyle: TextStyle(color: Colors.white),
+                          inputDecorationTheme: InputDecorationTheme(
+                            suffixIconColor: Colors.white,
+                            filled: true,
+                            fillColor: Colors.deepPurple.shade900,
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          dropdownMenuEntries: h,
+                          hintText: 'Kelas',
+                          controller: kelas,
+                          onSelected: (value) {
+                            setState(() {
+                              kelaspilihan = kelas.text;
+                            });
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -143,7 +177,11 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-
+                          showDialog(
+                            context: context,
+                            builder: (context) =>
+                                AlertDialog(title: Text(kelaspilihan)),
+                          );
                         });
                       },
                       child: Text(
@@ -160,7 +198,6 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
