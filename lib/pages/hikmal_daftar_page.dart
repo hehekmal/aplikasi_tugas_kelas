@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:flutter/material.dart';
 
 class HikmalDaftarPage extends StatefulWidget {
@@ -160,7 +161,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        DropdownMenu(
+                        DropdownMenu(menuHeight: 200,
                           textStyle: TextStyle(color: Colors.white),
                           inputDecorationTheme: InputDecorationTheme(
                             suffixIconColor: Colors.white,
@@ -185,7 +186,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaLoginPage(),));},
                       child: Text(
                         'login?',
                         style: TextStyle(color: Colors.white),

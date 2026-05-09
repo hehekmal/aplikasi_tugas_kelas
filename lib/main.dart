@@ -1,6 +1,5 @@
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_loading_page.dart';
-import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +16,6 @@ class Tulasap extends StatefulWidget {
 class _TulasapState extends State<Tulasap> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HikmalDaftarPage(),);
+    return MaterialApp(home: ChlaLoginPage(),);
   }
 }
