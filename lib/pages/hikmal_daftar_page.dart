@@ -38,9 +38,6 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
     DropdownMenuEntry(value: 6, label: 'X TKR 2'),
     DropdownMenuEntry(value: 6, label: 'X TKR 3'),
     DropdownMenuEntry(value: 6, label: 'X TKR 4'),
-
-
-
   ];
   @override
   Widget build(BuildContext context) {
@@ -157,11 +154,13 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                           ),
                         ),
                       ),
-                    ),SizedBox(height: 10,),
+                    ),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        DropdownMenu(menuHeight: 200,
+                        DropdownMenu(
+                          menuHeight: 200,
                           textStyle: TextStyle(color: Colors.white),
                           inputDecorationTheme: InputDecorationTheme(
                             suffixIconColor: Colors.white,
@@ -186,7 +185,14 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaLoginPage(),));},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChlaLoginPage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'login?',
                         style: TextStyle(color: Colors.white),
