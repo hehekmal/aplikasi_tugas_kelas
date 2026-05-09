@@ -1,3 +1,5 @@
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaLoginPage extends StatefulWidget {
@@ -81,14 +83,14 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HikmalDaftarPage(),));},
                       child: Text(
                         'daftar?',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaHomePage(),));},
                       child: Text(
                         'Login',
                         style: TextStyle(color: Colors.white),
