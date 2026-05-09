@@ -16,13 +16,30 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   late String kelaspilihan = 'kelas';
   int a = 0;
   List<DropdownMenuEntry<int>> h = [
-    DropdownMenuEntry(value: 0, label: '10 RPL 1'),
-    DropdownMenuEntry(value: 1, label: '10 RPL 2'),
-    DropdownMenuEntry(value: 2, label: '10 TKJ 1'),
-    DropdownMenuEntry(value: 3, label: '10 TKJ 2'),
-    DropdownMenuEntry(value: 4, label: '10 TKJ 3'),
-    DropdownMenuEntry(value: 5, label: '10 TKJ 4'),
-    DropdownMenuEntry(value: 6, label: '10 SIJA'),
+    DropdownMenuEntry(value: 0, label: 'X RPL 1'),
+    DropdownMenuEntry(value: 1, label: 'X RPL 2'),
+    DropdownMenuEntry(value: 2, label: 'X TKJ 1'),
+    DropdownMenuEntry(value: 3, label: 'X TKJ 2'),
+    DropdownMenuEntry(value: 4, label: 'X TKJ 3'),
+    DropdownMenuEntry(value: 5, label: 'X TKJ 4'),
+    DropdownMenuEntry(value: 6, label: 'X SIJA'),
+    DropdownMenuEntry(value: 6, label: 'X DPIB'),
+    DropdownMenuEntry(value: 6, label: 'X LPKC 1'),
+    DropdownMenuEntry(value: 6, label: 'X LPKC 2'),
+    DropdownMenuEntry(value: 6, label: 'X LPKC 3'),
+    DropdownMenuEntry(value: 6, label: 'X LPKC 4'),
+    DropdownMenuEntry(value: 6, label: 'X DKV 1'),
+    DropdownMenuEntry(value: 6, label: 'X DKV 2'),
+    DropdownMenuEntry(value: 6, label: 'X DKV 3'),
+    DropdownMenuEntry(value: 6, label: 'X TSM 1'),
+    DropdownMenuEntry(value: 6, label: 'X TSM 2'),
+    DropdownMenuEntry(value: 6, label: 'X TKR 1'),
+    DropdownMenuEntry(value: 6, label: 'X TKR 2'),
+    DropdownMenuEntry(value: 6, label: 'X TKR 3'),
+    DropdownMenuEntry(value: 6, label: 'X TKR 4'),
+
+
+
   ];
   @override
   Widget build(BuildContext context) {
