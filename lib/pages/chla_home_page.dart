@@ -13,7 +13,54 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.indigo,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+          child: Column(
+            children: [
+              Text(
+                "Aplikasi",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                "Tugas Kelas",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: 30),
+              ListTile(
+                shape: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none,
+                ),
+                title: Text("Settings"),
+                leading: Icon(Icons.settings),
+                tileColor: Colors.blue.shade200,
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                shape: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none,
+                ),
+                title: Text("Feedback"),
+                leading: Icon(Icons.message),
+                tileColor: Colors.blue.shade200,
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text("Beranda", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
       ),
@@ -39,8 +86,11 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Row(
-                    children: [ClipOval(
-                        child: Container(color: Colors.white, padding: EdgeInsets.all(2),
+                    children: [
+                      ClipOval(
+                        child: Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
                               'images/carmen.png',
@@ -85,8 +135,11 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
                         ),
-                        title: Text(mapel[c].namaMapel,style: TextStyle(color: Colors.white),),
-                        leading: Icon(mapel[c].iconMapel,color: Colors.black,),
+                        title: Text(
+                          mapel[c].namaMapel,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        leading: Icon(mapel[c].iconMapel, color: Colors.black),
                         tileColor: Colors.indigo,
                       ),
                     ),
