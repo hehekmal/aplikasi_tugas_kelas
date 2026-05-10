@@ -1,4 +1,6 @@
 import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
+import 'package:aplikasi_tugas_kelas/pages/drawer/chla_feedback_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaHomePage extends StatefulWidget {
@@ -37,6 +39,14 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
               ),
               SizedBox(height: 30),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HikmalSettingsPage(),
+                    ),
+                  );
+                },
                 shape: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide.none,
@@ -45,8 +55,14 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                 leading: Icon(Icons.settings),
                 tileColor: Colors.blue.shade200,
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChlaFeedbackPage()),
+                  );
+                },
                 shape: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide.none,
