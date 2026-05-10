@@ -39,8 +39,11 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Row(
-                    children: [ClipOval(
-                        child: Container(color: Colors.white, padding: EdgeInsets.all(2),
+                    children: [
+                      ClipOval(
+                        child: Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
                               'images/carmen.png',
@@ -85,8 +88,11 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
                         ),
-                        title: Text(mapel[c].namaMapel,style: TextStyle(color: Colors.white),),
-                        leading: Icon(mapel[c].iconMapel,color: Colors.black,),
+                        title: Text(
+                          mapel[c].namaMapel,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        leading: Icon(mapel[c].iconMapel, color: Colors.black),
                         tileColor: Colors.indigo,
                       ),
                     ),
