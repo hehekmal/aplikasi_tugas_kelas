@@ -17,6 +17,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
         title: Text("Beranda", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
       ),
+
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
