@@ -38,8 +38,10 @@ class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
                   borderSide: BorderSide.none,
                 ),
               ),
+              maxLines: 7,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.end,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
