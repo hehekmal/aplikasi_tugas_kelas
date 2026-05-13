@@ -15,7 +15,6 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0,
         centerTitle: true,
         title: Text(
           "Edit Profile",
