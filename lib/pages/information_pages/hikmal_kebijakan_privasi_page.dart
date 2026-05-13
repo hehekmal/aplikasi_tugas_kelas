@@ -14,11 +14,12 @@ class _HikmalKebijakanPrivasiPageState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(padding: EdgeInsets.all(10),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(10),
         child: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            boxShadow: [BoxShadow(blurRadius: 2,offset: Offset(2, 2))],
+            boxShadow: [BoxShadow(blurRadius: 2, offset: Offset(2, 2))],
             borderRadius: BorderRadius.circular(20),
             color: Colors.grey.shade300,
           ),
@@ -53,7 +54,7 @@ class _HikmalKebijakanPrivasiPageState
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '1. Informasi yang Kami  Kumpulkan',
+                          '1. Informasi yang Kami Kumpulkan',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -68,7 +69,7 @@ class _HikmalKebijakanPrivasiPageState
                   ),
                 ],
               ),
-              Container(width: double.infinity,height: 1,color: Colors.grey,),
+              Container(width: double.infinity, height: 1, color: Colors.grey),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -94,7 +95,7 @@ class _HikmalKebijakanPrivasiPageState
                   ),
                 ],
               ),
-              Container(width: double.infinity,height: 1,color: Colors.grey,),
+              Container(width: double.infinity, height: 1, color: Colors.grey),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
