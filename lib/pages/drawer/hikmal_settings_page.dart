@@ -17,7 +17,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(centerTitle: true,
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text('Settings', style: TextStyle(color: Colors.white)),
