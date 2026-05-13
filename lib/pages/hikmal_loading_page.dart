@@ -86,6 +86,7 @@ class _HikmalLoadingPageState extends State<HikmalLoadingPage> {
                 ],
               ),
             ),
+            SizedBox(height: 10,),
             Text(
               'Lengkapi tugas-tugas kalian yang belum tuntas',
               style: TextStyle(color: Colors.white),

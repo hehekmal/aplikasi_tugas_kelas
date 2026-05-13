@@ -96,7 +96,12 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: [Text(widget.tugas[i].tanggal,style: TextStyle(color: Colors.white),)],
+                              children: [
+                                Text(
+                                  widget.tugas[i].tanggal,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
                             ),
                           ],
                         ),
