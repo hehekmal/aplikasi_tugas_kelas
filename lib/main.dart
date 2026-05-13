@@ -16,6 +16,6 @@ class Tulasap extends StatefulWidget {
 class _TulasapState extends State<Tulasap> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ChlaLoginPage(),);
+    return MaterialApp(home: HikmalLoadingPage(),);
   }
 }
