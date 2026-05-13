@@ -1,4 +1,5 @@
-import 'package:aplikasi_tugas_kelas/pages/information_pages/hikmal_kebijakan_privasi_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_about_application.dart';
+import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HikmalSettingsPage extends StatefulWidget {
@@ -90,7 +91,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaProfilePage(),));},
                         icon: Icon(Icons.edit, size: 10),
                       ),
                     ],
@@ -185,7 +186,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       ),
                     ),
                     leading: Icon(Icons.question_mark, color: Colors.black),
-                    onTap: () {},
+                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaAboutApplication(),));},
                   ),
                   ListTile(
                     title: Text(
@@ -199,7 +200,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       Icons.fact_check_rounded,
                       color: Colors.black,
                     ),
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HikmalKebijakanPrivasiPage(),));},
+                    onTap: () {},
                   ),
                   ListTile(
                     title: Text(
