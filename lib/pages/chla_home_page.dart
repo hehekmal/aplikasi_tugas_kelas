@@ -1,6 +1,7 @@
 import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/chla_feedback_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaHomePage extends StatefulWidget {
@@ -156,7 +157,18 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                           style: TextStyle(color: Colors.white),
                         ),
                         leading: Icon(mapel[c].iconMapel, color: Colors.black),
-                        tileColor: Colors.indigo,
+                        tileColor: Colors.blue.shade900,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HikmalDaftarTugasPage(
+                                judul: mapel[c].namaMapel,
+                                tugas: mapel[c].tugas,
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
