@@ -1,5 +1,6 @@
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_about_application.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_profile_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_syarat_dan_ketentuan.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/hikmal_kebijakan_privasi_page.dart';
 import 'package:flutter/material.dart';
 
@@ -216,7 +217,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       Icons.document_scanner_outlined,
                       color: Colors.black,
                     ),
-                    onTap: () {},
+                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaSyaratDanKetentuan(),));},
                   ),
                 ],
               ),

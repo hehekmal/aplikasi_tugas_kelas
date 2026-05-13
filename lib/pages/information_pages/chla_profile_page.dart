@@ -147,7 +147,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     onPressed: () {},
                     child: Text(
                       "Cancel",
-                      style: TextStyle(color: Colors.grey.shade700),
+                      style: TextStyle(color: Colors.grey.shade800),
                     ),
                   ),
                 ),
