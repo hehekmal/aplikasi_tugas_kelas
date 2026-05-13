@@ -44,6 +44,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                   style: TextStyle(color: Colors.blue),
                 ),
               ),
+
               SizedBox(height: 20),
               Container(
                 padding: EdgeInsets.all(10),

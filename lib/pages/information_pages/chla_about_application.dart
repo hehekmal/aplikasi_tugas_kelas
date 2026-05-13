@@ -41,6 +41,7 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     SizedBox(height: 10),
                     Text(
                       "Aplikasi Tugas Kelas adalah aplikasi pengelola tugas yang dikelola langsung oleh Ketua Kelas. Aplikasi ini dibuat untuk memastikan seluruh anggota kelas mendapatkan informasi tugas yang valid, terpusat, dan seragam.",

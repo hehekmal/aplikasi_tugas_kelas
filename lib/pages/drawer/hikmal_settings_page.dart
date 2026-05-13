@@ -84,6 +84,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                             ),
                           ),
                         ],
+
                       ),
                     ],
                   ),
