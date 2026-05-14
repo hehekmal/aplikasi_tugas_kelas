@@ -165,6 +165,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                               builder: (context) => HikmalDaftarTugasPage(
                                 judul: mapel[c].namaMapel,
                                 tugas: mapel[c].tugas,
+                                mapelId: c,
                               ),
                             ),
                           );

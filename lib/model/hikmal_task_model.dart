@@ -1,6 +1,6 @@
 class TaskModel {
   final String judul;
-  final bool selesai;
+  late  bool selesai;
   final String isiTugas;
   final String tanggal;
 

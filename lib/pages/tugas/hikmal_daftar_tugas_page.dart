@@ -1,14 +1,17 @@
+import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
 import 'package:aplikasi_tugas_kelas/model/hikmal_task_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_detail_tugas_page.dart';
 import 'package:flutter/material.dart';
 
 class HikmalDaftarTugasPage extends StatefulWidget {
   final String judul;
+  final int mapelId;
   final List<TaskModel> tugas;
   const HikmalDaftarTugasPage({
     super.key,
     required this.judul,
     required this.tugas,
+    required this.mapelId,
   });
 
   @override
@@ -57,11 +60,14 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                 itemBuilder: (context, i) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              HikmalDetailTugasPage(tugas: widget.tugas[i]),
+                          builder: (context) => HikmalDetailTugasPage(
+                            tugas: widget.tugas[i],
+                            mapelId: widget.mapelId,
+                            id: i,
+                          ),
                         ),
                       );
                     },
@@ -83,6 +89,9 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                   ),
                                 ),
                                 Card(
+                                  color: widget.tugas[i].selesai
+                                      ? Colors.green
+                                      : Colors.red,
                                   child: Padding(
                                     padding: const EdgeInsets.all(2),
                                     child: Text(
