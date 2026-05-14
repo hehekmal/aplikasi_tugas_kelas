@@ -37,7 +37,12 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
               ),
               SizedBox(height: 10),
               TextButton(
-                onPressed: () {},
+                onPressed: () {showModalBottomSheet(context: context, shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20),),),builder: (context) {
+                  return Container(padding: EdgeInsets.all(20),
+                    child: Column(mainAxisSize: MainAxisSize.min, children: [
+                      ListTile(leading: Icon(Icons.camera_alt),)
+                    ],),);
+                });},
                 child: Text(
                   "Change photo",
                   style: TextStyle(color: Colors.blue),
