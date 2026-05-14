@@ -37,12 +37,36 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
               ),
               SizedBox(height: 10),
               TextButton(
-                onPressed: () {showModalBottomSheet(context: context, shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20),),),builder: (context) {
-                  return Container(padding: EdgeInsets.all(20),
-                    child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      ListTile(leading: Icon(Icons.camera_alt),)
-                    ],),);
-                });},
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
+                    ),
+                    builder: (context) {
+                      return Container(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.camera_alt),
+                              title: Text("Ambil Foto"),
+                              onTap: () {},
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.photo),
+                              title: Text("Galeri"),
+                              onTap: () {},
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
                 child: Text(
                   "Change photo",
                   style: TextStyle(color: Colors.blue),
@@ -52,7 +76,10 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
               SizedBox(height: 20),
               Container(
                 padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius: 1,offset: Offset(1.5, 1.5))],
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(blurRadius: 1, offset: Offset(1.5, 1.5)),
+                  ],
                   color: Colors.grey.shade200,
                   borderRadius: BorderRadius.circular(15),
                 ),
