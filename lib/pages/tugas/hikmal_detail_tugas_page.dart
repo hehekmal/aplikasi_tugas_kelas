@@ -13,6 +13,7 @@ class HikmalDetailTugasPage extends StatefulWidget {
 class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
@@ -55,19 +56,24 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 ),
               ),
             ),
-            // Container(
-            //   width: double.infinity,
-            //   height: 200,
-            //   decoration: BoxDecoration(
-            //     image: DecorationImage(
-            //       image: AssetImage(
-            //         widget.tugas.selesai
-            //             ? 'images/complete_react.png'
-            //             : 'images/complete_react.png',
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            Container(
+              width: size.width,
+              height: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                image: DecorationImage(
+                  image: AssetImage(
+                    widget.tugas.selesai
+                        ? 'images/complete_react.png'
+                        : 'images/complete_react.png',
+                  ),
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
           ],
         ),
       ),
