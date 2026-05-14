@@ -11,10 +11,11 @@ class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true,
+      appBar: AppBar(
+        centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
-        title: Text("Feedback", style: TextStyle(color: Colors.white, )),
+        title: Text("Feedback", style: TextStyle(color: Colors.white)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

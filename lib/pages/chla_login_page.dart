@@ -21,20 +21,30 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
           width: double.infinity,
           color: Colors.white,
           padding: EdgeInsets.all(20),
-          child: Container(decoration: BoxDecoration(color: Colors.blue.shade800,borderRadius:  BorderRadius.circular(25)),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.blue.shade800,
+              borderRadius: BorderRadius.circular(25),
+            ),
             height: double.infinity,
             width: double.infinity,
             padding: EdgeInsets.all(20),
-            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
                     Text(
                       'Login',
-                      style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Row(
-                      children: [SizedBox(width: 25,),
+                      children: [
+                        SizedBox(width: 25),
                         Text(
                           'Nama/Email:',
                           style: TextStyle(color: Colors.white),
@@ -56,7 +66,8 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       ),
                     ),
                     Row(
-                      children: [SizedBox(width: 25,),
+                      children: [
+                        SizedBox(width: 25),
                         Text(
                           'Password:',
                           style: TextStyle(color: Colors.white),
@@ -83,21 +94,37 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HikmalDaftarPage(),));},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HikmalDaftarPage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'daftar?',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaHomePage(),));},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChlaHomePage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Login',
                         style: TextStyle(color: Colors.white),
                       ),
-                      style: ButtonStyle(elevation: WidgetStatePropertyAll(5),shadowColor: WidgetStatePropertyAll(Colors.black),
+                      style: ButtonStyle(
+                        elevation: WidgetStatePropertyAll(5),
+                        shadowColor: WidgetStatePropertyAll(Colors.black),
                         backgroundColor: WidgetStatePropertyAll(
-                          Colors.lightBlueAccent, 
+                          Colors.lightBlueAccent,
                         ),
                       ),
                     ),

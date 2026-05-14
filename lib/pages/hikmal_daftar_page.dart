@@ -15,8 +15,9 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   TextEditingController passwordConfirm = TextEditingController();
   TextEditingController kelas = TextEditingController();
   late String kelaspilihan = 'kelas';
+  bool? ketuaKelas = false;
   int a = 0;
-  List<DropdownMenuEntry<int>> h = [
+  List<DropdownMenuEntry<int>> pilihkelas = [
     DropdownMenuEntry(value: 0, label: 'X RPL 1'),
     DropdownMenuEntry(value: 1, label: 'X RPL 2'),
     DropdownMenuEntry(value: 2, label: 'X TKJ 1'),
@@ -157,8 +158,25 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ),
                     SizedBox(height: 10),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: ketuaKelas,
+                              onChanged: (value) {
+                                setState(() {
+                                  ketuaKelas = value;
+                                });
+                              },
+                              activeColor: Colors.green,
+                            ),
+                            Text(
+                              'Ketua Kelas',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                         DropdownMenu(
                           menuHeight: 200,
                           textStyle: TextStyle(color: Colors.white),
@@ -168,7 +186,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                             fillColor: Colors.deepPurple.shade900,
                             hintStyle: TextStyle(color: Colors.white),
                           ),
-                          dropdownMenuEntries: h,
+                          dropdownMenuEntries: pilihkelas,
                           hintText: 'Kelas',
                           controller: kelas,
                           onSelected: (value) {

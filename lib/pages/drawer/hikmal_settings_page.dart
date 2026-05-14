@@ -17,7 +17,8 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true,
+      appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text('Settings', style: TextStyle(color: Colors.white)),
@@ -34,9 +35,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.grey.shade300,
-                boxShadow: [
-                  BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1),
-                ],
+                boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +85,6 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                             ),
                           ),
                         ],
-
                       ),
                     ],
                   ),
@@ -94,7 +92,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       IconButton(
-                        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaProfilePage(),));},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChlaProfilePage(),
+                            ),
+                          );
+                        },
                         icon: Icon(Icons.edit, size: 10),
                       ),
                     ],
@@ -115,9 +120,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.grey.shade300,
-                boxShadow: [
-                  BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1),
-                ],
+                boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
                 children: [
@@ -174,9 +177,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.grey.shade300,
-                boxShadow: [
-                  BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1),
-                ],
+                boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
                 children: [
@@ -189,7 +190,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       ),
                     ),
                     leading: Icon(Icons.question_mark, color: Colors.black),
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaAboutApplication(),));},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChlaAboutApplication(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: Text(
@@ -203,7 +211,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       Icons.fact_check_rounded,
                       color: Colors.black,
                     ),
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HikmalKebijakanPrivasiPage(),));},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HikmalKebijakanPrivasiPage(),
+                        ),
+                      );
+                    },
                   ),
                   ListTile(
                     title: Text(
@@ -217,7 +232,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       Icons.document_scanner_outlined,
                       color: Colors.black,
                     ),
-                    onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ChlaSyaratDanKetentuan(),));},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChlaSyaratDanKetentuan(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -229,9 +251,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.grey.shade300,
-                boxShadow: [
-                  BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1),
-                ],
+                boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
                 children: [

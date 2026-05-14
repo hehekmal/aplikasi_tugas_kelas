@@ -18,10 +18,10 @@ class _HikmalLoadingPageState extends State<HikmalLoadingPage> {
     loadTime = Timer.periodic(Duration(seconds: 3), (timer) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ChlaLoginPage(),),
+        MaterialPageRoute(builder: (context) => ChlaLoginPage()),
       );
     });
-    loadbool=Timer.periodic(Duration(milliseconds: 1), (timer) {
+    loadbool = Timer.periodic(Duration(milliseconds: 1), (timer) {
       setState(() {
         load = true;
       });
@@ -86,7 +86,7 @@ class _HikmalLoadingPageState extends State<HikmalLoadingPage> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             Text(
               'Lengkapi tugas-tugas kalian yang belum tuntas',
               style: TextStyle(color: Colors.white),

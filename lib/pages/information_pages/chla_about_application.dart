@@ -17,7 +17,12 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
           child: Column(
             children: [
               SizedBox(height: 20),
-              Image.asset("images/book.png", width: 300, height: 150,fit: BoxFit.cover,),
+              Image.asset(
+                "images/book.png",
+                width: 300,
+                height: 150,
+                fit: BoxFit.cover,
+              ),
               Text(
                 "Tugas Kelas",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
