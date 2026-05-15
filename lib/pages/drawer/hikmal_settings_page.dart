@@ -1,11 +1,16 @@
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_about_application.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_profile_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_syarat_dan_ketentuan.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/hikmal_kebijakan_privasi_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../model/hikmal_account_model.dart';
+
 class HikmalSettingsPage extends StatefulWidget {
-  const HikmalSettingsPage({super.key});
+  final int id;
+  const HikmalSettingsPage({super.key, required this.id});
 
   @override
   State<HikmalSettingsPage> createState() => _HikmalSettingsPageState();
@@ -18,6 +23,17 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChlaHomePage(id: widget.id),
+              ),
+            );
+          },
+          icon: Icon(CupertinoIcons.back),
+        ),
         centerTitle: true,
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
@@ -60,7 +76,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Chladiola Nazwa',
+                            accounts[widget.id].nama,
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -93,10 +109,11 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ChlaProfilePage(),
+                              builder: (context) =>
+                                  ChlaProfilePage(id: widget.id),
                             ),
                           );
                         },

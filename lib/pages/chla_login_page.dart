@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class ChlaLoginPage extends StatefulWidget {
 }
 
 class _ChlaLoginPageState extends State<ChlaLoginPage> {
+  bool salah=false;
   TextEditingController nama = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
@@ -88,6 +90,7 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                         ),
                       ),
                     ),
+                    Row(children: [salah?Text('Login Gagal', style: TextStyle(color: Colors.red),):Container()],)
                   ],
                 ),
                 Row(
@@ -109,12 +112,22 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ChlaHomePage(),
-                          ),
-                        );
+                        for (int i = 0; i <= accounts.length; i++) {
+                          if (nama.text == accounts[i].nama &&
+                              password.text == accounts[i].password) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ChlaHomePage(id: i,),
+                              ),
+                            );
+                          }else {
+                            setState(() {
+                              salah=true;
+
+                            });
+                          }
+                        }
                       },
                       child: Text(
                         'Login',

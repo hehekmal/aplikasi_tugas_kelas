@@ -1,13 +1,19 @@
+import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
+import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaProfilePage extends StatefulWidget {
-  const ChlaProfilePage({super.key});
+  final int id;
+  const ChlaProfilePage({super.key, required this.id});
 
   @override
   State<ChlaProfilePage> createState() => _ChlaProfilePageState();
 }
 
 class _ChlaProfilePageState extends State<ChlaProfilePage> {
+  late TextEditingController nama = TextEditingController(
+    text: accounts[widget.id].nama,
+  );
   bool lihat = false;
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,9 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                   height: 100,
                   color: Colors.black,
                   padding: EdgeInsets.all(3),
-                  child: ClipOval(child: Image.asset("assets/images/carmen.png")),
+                  child: ClipOval(
+                    child: Image.asset("assets/images/carmen.png"),
+                  ),
                 ),
               ),
               SizedBox(height: 10),
@@ -89,7 +97,19 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Nama"),
-                        Text("Chladiola Nazwa"),
+                        Container(
+                          width: 200,
+                          height: 40,
+                          child: TextField(
+                            controller: nama,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                          ),
+                        ),
+                        //Text("Chladiola Nazwa"),
                         SizedBox(),
                       ],
                     ),
@@ -156,7 +176,18 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        accounts[widget.id].nama = nama.text;
+                      });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              HikmalSettingsPage(id: widget.id),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Save Changes",
                       style: TextStyle(color: Colors.white),

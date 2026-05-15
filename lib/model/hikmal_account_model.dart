@@ -6,7 +6,7 @@ class HikmalAccountModel {
   HikmalAccountModel({required this.nama, required this.email, required this.password});
 }
 
-List<HikmalAccountModel> akun = [
+List<HikmalAccountModel> accounts = [
   HikmalAccountModel(nama: 'hikmal', email: 'email@gmail.com', password: 'h'),
   HikmalAccountModel(nama: 'chladiola', email: 'email@gmail.com', password: 'c'),
 ];

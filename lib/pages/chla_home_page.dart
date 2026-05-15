@@ -1,11 +1,13 @@
 import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
+import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/chla_feedback_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaHomePage extends StatefulWidget {
-  const ChlaHomePage({super.key});
+  final int id;
+  const ChlaHomePage({super.key, required this.id, });
 
   @override
   State<ChlaHomePage> createState() => _ChlaHomePageState();
@@ -41,10 +43,10 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
               SizedBox(height: 30),
               ListTile(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HikmalSettingsPage(),
+                      builder: (context) => HikmalSettingsPage(id: widget.id,),
                     ),
                   );
                 },
@@ -117,11 +119,11 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                         ),
                       ),
                       SizedBox(width: 10),
-                      Column(
+                      Column(crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Chladiola Nazwa",
+                            accounts[widget.id].nama,
                             style: TextStyle(color: Colors.white),
                           ),
                           Container(
