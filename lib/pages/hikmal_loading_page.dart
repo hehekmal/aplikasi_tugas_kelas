@@ -69,7 +69,7 @@ class _HikmalLoadingPageState extends State<HikmalLoadingPage> {
                 color: Colors.white,
               ),
             ),
-            Image.asset('images/tulasap_logo.png', width: 150),
+            Image.asset('assets/images/tulasap_logo.png', width: 150),
             SizedBox(height: 40),
             Container(
               height: 10,

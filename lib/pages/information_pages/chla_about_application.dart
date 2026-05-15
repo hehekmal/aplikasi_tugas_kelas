@@ -18,7 +18,7 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
             children: [
               SizedBox(height: 20),
               Image.asset(
-                "images/book.png",
+                "assets/images/book.png",
                 width: 300,
                 height: 150,
                 fit: BoxFit.cover,

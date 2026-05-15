@@ -110,7 +110,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                           padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
-                              'images/carmen.png',
+                              'assets/images/carmen.png',
                               fit: BoxFit.fitHeight,
                             ),
                           ),

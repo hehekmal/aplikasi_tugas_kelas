@@ -32,7 +32,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                   height: 100,
                   color: Colors.black,
                   padding: EdgeInsets.all(3),
-                  child: ClipOval(child: Image.asset("images/carmen.png")),
+                  child: ClipOval(child: Image.asset("assets/images/carmen.png")),
                 ),
               ),
               SizedBox(height: 10),

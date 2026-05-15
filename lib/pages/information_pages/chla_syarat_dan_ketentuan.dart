@@ -35,7 +35,7 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                 children: [
                   ClipOval(
                     child: Image.asset(
-                      "images/kbijakanpriv.png",
+                      "assets/images/kbijakanpriv.png",
                       height: 200,
                       width: 200,
                     ),

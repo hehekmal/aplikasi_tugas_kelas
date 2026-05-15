@@ -34,7 +34,7 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('images/ikon/kebijakanpriv.png', width: 40),
+                  Image.asset('assets/images/ikon/kebijakanpriv.png', width: 40),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -47,7 +47,7 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('images/ikon/infopriv.png', width: 40),
+                  Image.asset('assets/images/ikon/infopriv.png', width: 40),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -73,7 +73,7 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('images/ikon/usedinfopriv.png', width: 40),
+                  Image.asset('assets/images/ikon/usedinfopriv.png', width: 40),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -99,7 +99,7 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('images/ikon/privdata.png', width: 40),
+                  Image.asset('assets/images/ikon/privdata.png', width: 40),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(

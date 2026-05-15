@@ -110,8 +110,8 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 image: DecorationImage(
                   image: AssetImage(
                     widget.tugas.selesai
-                        ? 'images/complete_react.png'
-                        : 'images/complete_react.png',
+                        ? 'assets/images/complete_react.png'
+                        : 'assets/images/complete_react.png',
                   ),
                   fit: BoxFit.cover,
                 ),
