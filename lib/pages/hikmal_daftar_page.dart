@@ -228,10 +228,6 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                               a = a;
                             } else {
                               a = a+1;
-                            }if (nama.text == accounts[i].nama) {
-                              a = a;
-                            } else {
-                              a = a+1;
                             }
                           }
                           if (a ==accounts.length && password.text == passwordConfirm.text) {

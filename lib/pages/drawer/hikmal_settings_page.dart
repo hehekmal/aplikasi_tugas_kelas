@@ -85,7 +85,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                           Padding(
                             padding: const EdgeInsets.only(bottom: 3, top: 3),
                             child: Text(
-                              'ChladiolaNazwa@gmail.com',
+                              accounts[widget.id].email,
                               style: TextStyle(fontSize: 10),
                             ),
                           ),
