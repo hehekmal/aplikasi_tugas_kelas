@@ -1,30 +1,29 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:aplikasi_tugas_kelas/main.dart';
+import 'dart:io';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  List<String> n = ['a1', 'aa2', 'aaa3'];
+  List<String> p = ['a', 'aa', 'aaa'];
+  stdout.write('nama: ');
+  String name = stdin.readLineSync()!;
+  stdout.write('password: ');
+  String password = stdin.readLineSync()!;
+  stdout.write('cpassword: ');
+  String cpassword = stdin.readLineSync()!;
+  int a = 0;
+  for (int i = 0; i < n.length; i++) {
+    print('i$i');
+    if (name == n[i]) {
+      a = a;
+    } else {
+      a = a + 1;
+    }
+    print('a$a');
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  }if(a==n.length&&password==cpassword){
+    p.add(name);
+    n.add(password);
+  }
+  print(n);
+  print(p);
+  print('nlength${n.length}');
 }

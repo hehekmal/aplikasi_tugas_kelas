@@ -112,7 +112,7 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        for (int i = 0; i <= accounts.length; i++) {
+                        for (int i = 0; i > accounts.length; i++) {
                           if (nama.text == accounts[i].nama &&
                               password.text == accounts[i].password) {
                             Navigator.pushReplacement(

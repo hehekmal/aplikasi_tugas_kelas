@@ -1,6 +1,9 @@
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:flutter/material.dart';
 
+import '../model/hikmal_account_model.dart';
+import 'chla_home_page.dart';
+
 class HikmalDaftarPage extends StatefulWidget {
   const HikmalDaftarPage({super.key});
 
@@ -17,6 +20,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   late String kelaspilihan = 'kelas';
   bool? ketuaKelas = false;
   int a = 0;
+  int cekKetua = 0;
   List<DropdownMenuEntry<int>> pilihkelas = [
     DropdownMenuEntry(value: 0, label: 'X RPL 1'),
     DropdownMenuEntry(value: 1, label: 'X RPL 2'),
@@ -25,20 +29,20 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
     DropdownMenuEntry(value: 4, label: 'X TKJ 3'),
     DropdownMenuEntry(value: 5, label: 'X TKJ 4'),
     DropdownMenuEntry(value: 6, label: 'X SIJA'),
-    DropdownMenuEntry(value: 6, label: 'X DPIB'),
-    DropdownMenuEntry(value: 6, label: 'X LPKC 1'),
-    DropdownMenuEntry(value: 6, label: 'X LPKC 2'),
-    DropdownMenuEntry(value: 6, label: 'X LPKC 3'),
-    DropdownMenuEntry(value: 6, label: 'X LPKC 4'),
-    DropdownMenuEntry(value: 6, label: 'X DKV 1'),
-    DropdownMenuEntry(value: 6, label: 'X DKV 2'),
-    DropdownMenuEntry(value: 6, label: 'X DKV 3'),
-    DropdownMenuEntry(value: 6, label: 'X TSM 1'),
-    DropdownMenuEntry(value: 6, label: 'X TSM 2'),
-    DropdownMenuEntry(value: 6, label: 'X TKR 1'),
-    DropdownMenuEntry(value: 6, label: 'X TKR 2'),
-    DropdownMenuEntry(value: 6, label: 'X TKR 3'),
-    DropdownMenuEntry(value: 6, label: 'X TKR 4'),
+    DropdownMenuEntry(value: 7, label: 'X DPIB'),
+    DropdownMenuEntry(value: 8, label: 'X LPKC 1'),
+    DropdownMenuEntry(value: 9, label: 'X LPKC 2'),
+    DropdownMenuEntry(value: 10, label: 'X LPKC 3'),
+    DropdownMenuEntry(value: 11, label: 'X LPKC 4'),
+    DropdownMenuEntry(value: 12, label: 'X DKV 1'),
+    DropdownMenuEntry(value: 13, label: 'X DKV 2'),
+    DropdownMenuEntry(value: 14, label: 'X DKV 3'),
+    DropdownMenuEntry(value: 15, label: 'X TSM 1'),
+    DropdownMenuEntry(value: 16, label: 'X TSM 2'),
+    DropdownMenuEntry(value: 17, label: 'X TKR 1'),
+    DropdownMenuEntry(value: 18, label: 'X TKR 2'),
+    DropdownMenuEntry(value: 19, label: 'X TKR 3'),
+    DropdownMenuEntry(value: 20, label: 'X TKR 4'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -219,11 +223,33 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          showDialog(
-                            context: context,
-                            builder: (context) =>
-                                AlertDialog(title: Text(kelaspilihan)),
-                          );
+                          for (int i = 0; i < accounts.length; i++) {
+                            if (nama.text == accounts[i].nama) {
+                              a = a;
+                            } else {
+                              a = a+1;
+                            }if (nama.text == accounts[i].nama) {
+                              a = a;
+                            } else {
+                              a = a+1;
+                            }
+                          }
+                          if (a ==accounts.length && password.text == passwordConfirm.text) {
+                            accounts.add(
+                              HikmalAccountModel(
+                                nama: nama.text,
+                                email: email.text,
+                                password: password.text,
+                              ),
+                            );
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ChlaHomePage(id: accounts.length-1),
+                              ),
+                            );
+                          }
                         });
                       },
                       child: Text(
