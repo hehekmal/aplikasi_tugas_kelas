@@ -1,4 +1,5 @@
 import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,

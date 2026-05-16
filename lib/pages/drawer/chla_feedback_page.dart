@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaFeedbackPage extends StatefulWidget {
@@ -10,7 +11,7 @@ class ChlaFeedbackPage extends StatefulWidget {
 class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
       appBar: AppBar(
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
@@ -29,10 +30,10 @@ class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
                 ),
               ],
             ),
-            TextField(
+            TextField(style: TextStyle(color: darkmode?Colors.white:Colors.black),
               decoration: InputDecoration(
-                hintText: "tulis disini...",
-                fillColor: Colors.grey,
+                hintText: "tulis disini...",hintStyle: TextStyle(color: darkmode?Colors.grey.shade500:Colors.grey.shade700),
+                fillColor: darkmode?Colors.black:Colors.grey,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

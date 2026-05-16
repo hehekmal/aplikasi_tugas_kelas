@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../model/chla_subject_model.dart';
 import '../../model/hikmal_task_model.dart';
+import '../chla_home_page.dart';
 
 class HikmalDetailTugasPage extends StatefulWidget {
   final TaskModel tugas;
@@ -47,7 +48,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
           'Tugas',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
-      ),
+      ),backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +96,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                     },
                     activeColor: Colors.green,
                   ),
-                  Text('Selesai'),
+                  Text('Selesai',style: TextStyle(color: darkmode?Colors.white:Colors.black),),
                 ],
               ),
             ),
@@ -111,7 +112,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                   image: AssetImage(
                     widget.tugas.selesai
                         ? 'assets/images/complete_react.png'
-                        : 'assets/images/complete_react.png',
+                        : 'assets/images/incomplete_react.png',
                   ),
                   fit: BoxFit.cover,
                 ),

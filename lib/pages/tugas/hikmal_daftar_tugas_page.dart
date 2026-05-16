@@ -1,5 +1,6 @@
 import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
 import 'package:aplikasi_tugas_kelas/model/hikmal_task_model.dart';
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_detail_tugas_page.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -42,7 +44,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                   Text(
                     'Tugas',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: darkmode ? Colors.white : Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
@@ -50,9 +52,10 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                 ],
               ),
             ),
-            SizedBox(
+            Container(
               height: size.height,
               width: size.width,
+              padding: EdgeInsets.all(10),
               child: GridView.builder(
                 itemCount: widget.tugas.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -98,7 +101,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                     child: Text(
                                       widget.tugas[i].selesai
                                           ? 'Complete'
-                                          : 'Incomplete',
+                                          : 'Incomplete',style: TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 ),

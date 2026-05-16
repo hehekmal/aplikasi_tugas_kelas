@@ -5,6 +5,7 @@ import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
 
+bool darkmode=false;
 class ChlaHomePage extends StatefulWidget {
   final int id;
   const ChlaHomePage({super.key, required this.id, });
@@ -17,7 +18,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
+    return Scaffold(backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
       drawer: Drawer(
         backgroundColor: Colors.indigo,
         child: Padding(

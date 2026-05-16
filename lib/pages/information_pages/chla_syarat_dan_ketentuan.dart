@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:flutter/material.dart';
 
 class ChlaSyaratDanKetentuan extends StatefulWidget {
@@ -11,12 +12,18 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       appBar: AppBar(
+        backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
+        iconTheme: IconThemeData(color: darkmode ? Colors.white : Colors.black),
         elevation: 0,
         centerTitle: true,
         title: Text(
           "Syarat dan Ketentuan",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: darkmode ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
 
@@ -47,11 +54,17 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         Text(
                           "Syarat dan Ketentuan",
                           style: TextStyle(
+                            color: darkmode ? Colors.white : Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
+                          style: TextStyle(
+                            color: darkmode
+                                ? Colors.grey.shade200
+                                : Colors.black,
+                          ),
                           "Dengan menggunakann layanan kami, Anda menyetujui syarat dan ketentuan berikut. Harap baca dengan seksama sebelum menggunakan layanan.",
                         ),
                       ],
@@ -76,7 +89,12 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         color: Colors.blue,
                         height: 20,
                         width: 20,
-                        child: Center(child: Text("1")),
+                        child: Center(
+                          child: Text(
+                            "1",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -88,11 +106,17 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                             Text(
                               "Ketentuan Umum",
                               style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
+                              style: TextStyle(
+                                color: darkmode
+                                    ? Colors.grey.shade200
+                                    : Colors.black,
+                              ),
                               "Layanan ini disediakan untuk pengguna yang berusia minimal 17 tahun atau telah mendapat izin dari wali/penanggung jawab.",
                             ),
                           ],
@@ -119,7 +143,12 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         color: Colors.blue,
                         height: 20,
                         width: 20,
-                        child: Center(child: Text("2")),
+                        child: Center(
+                          child: Text(
+                            "2",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -131,11 +160,17 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                             Text(
                               "Pengguna Umum",
                               style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
+                              style: TextStyle(
+                                color: darkmode
+                                    ? Colors.grey.shade200
+                                    : Colors.black,
+                              ),
                               "Pengguna setuju untuk mennggunakan layanan ini sesuai dengan hukum yang berlaku dan tidak untuk tujuan yang melanggar hak pihak lain.",
                             ),
                           ],
@@ -162,7 +197,12 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         color: Colors.blue,
                         height: 20,
                         width: 20,
-                        child: Center(child: Text("3")),
+                        child: Center(
+                          child: Text(
+                            "3",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -174,11 +214,15 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                             Text(
                               "Akun Pengguna",
                               style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
+                              style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
+                              ),
                               "Pengguna bertanggung jawab atas kerahasiaan akun dan semua aktivitas yang dilakukan melalui akun tersebut.",
                             ),
                           ],
@@ -205,7 +249,12 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         color: Colors.blue,
                         height: 20,
                         width: 20,
-                        child: Center(child: Text("4")),
+                        child: Center(
+                          child: Text(
+                            "4",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -217,11 +266,15 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                             Text(
                               "Konten Pengguna",
                               style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
+                              style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
+                              ),
                               "Pengguna bertanggung jawab atas kerahasiaan akun dan semua aktivitas yang dilakukan melalui akun tersebut.",
                             ),
                           ],
@@ -248,7 +301,12 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                         color: Colors.blue,
                         height: 20,
                         width: 20,
-                        child: Center(child: Text("5")),
+                        child: Center(
+                          child: Text(
+                            "5",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -260,11 +318,15 @@ class _ChlaSyaratDanKetentuanState extends State<ChlaSyaratDanKetentuan> {
                             Text(
                               "Pembatas Tanggung Jawab",
                               style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
+                              style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
+                              ),
                               "Pengguna bertanggung jawab atas kerahasiaan akun dan semua aktivitas yang dilakukan melalui akun tersebut.",
                             ),
                           ],

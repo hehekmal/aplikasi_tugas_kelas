@@ -17,7 +17,6 @@ class HikmalSettingsPage extends StatefulWidget {
 }
 
 class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
-  bool darkmode = false;
   bool notif = false;
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text('Settings', style: TextStyle(color: Colors.white)),
-      ),
+      ),backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -50,7 +49,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.grey.shade300,
+                color: darkmode?Colors.black:Colors.grey.shade300,
                 boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Row(
@@ -60,7 +59,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     children: [
                       ClipOval(
                         child: Container(
-                          color: Colors.black,
+                          color: darkmode?Colors.white:Colors.black,
                           padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
@@ -79,14 +78,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                             accounts[widget.id].nama,
                             style: TextStyle(
                               fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(bottom: 3, top: 3),
                             child: Text(
                               accounts[widget.id].email,
-                              style: TextStyle(fontSize: 10),
+                              style: TextStyle(fontSize: 10,color: darkmode?Colors.white:Colors.black),
                             ),
                           ),
                           Container(
@@ -128,7 +127,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Preferensi',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black),
               ),
             ),
             Container(
@@ -136,7 +135,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.grey.shade300,
+                color: darkmode?Colors.black:Colors.grey.shade300,
                 boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
@@ -145,12 +144,11 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     title: Text(
                       'Mode Gelap',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black
                       ),
                     ),
                     subtitle: Text('Aktifkan tema gelap'),
-                    secondary: Icon(Icons.shield_moon, color: Colors.black),
+                    secondary: Icon(Icons.shield_moon, color: darkmode?Colors.white:Colors.black),
                     value: darkmode,
                     onChanged: (value) {
                       setState(() {
@@ -162,14 +160,13 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     title: Text(
                       'Notifikasi',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black
                       ),
                     ),
                     subtitle: Text('Terima pengingat tugas'),
                     secondary: Icon(
                       Icons.notifications_active,
-                      color: Colors.black,
+                      color: darkmode?Colors.white:Colors.black,
                     ),
                     value: notif,
                     onChanged: (value) {
@@ -185,7 +182,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Lainnya',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black),
               ),
             ),
             Container(
@@ -193,7 +190,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.grey.shade300,
+                color: darkmode?Colors.black:Colors.grey.shade300,
                 boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
@@ -203,10 +200,10 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       'Tentang Aplikasi',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                          color: darkmode?Colors.white:Colors.black
                       ),
                     ),
-                    leading: Icon(Icons.question_mark, color: Colors.black),
+                    leading: Icon(Icons.question_mark, color: darkmode?Colors.white:Colors.black),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -220,13 +217,11 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     title: Text(
                       'Kebijakan Privasi',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black
                       ),
                     ),
                     leading: Icon(
-                      Icons.fact_check_rounded,
-                      color: Colors.black,
+                      Icons.fact_check_rounded,color: darkmode?Colors.white:Colors.black
                     ),
                     onTap: () {
                       Navigator.push(
@@ -241,13 +236,11 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                     title: Text(
                       'Syarat & Ketentuan',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        fontWeight: FontWeight.bold,color: darkmode?Colors.white:Colors.black
                       ),
                     ),
                     leading: Icon(
-                      Icons.document_scanner_outlined,
-                      color: Colors.black,
+                      Icons.document_scanner_outlined,color: darkmode?Colors.white:Colors.black
                     ),
                     onTap: () {
                       Navigator.push(
@@ -267,7 +260,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.grey.shade300,
+                color: darkmode?Colors.black:Colors.grey.shade300,
                 boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
               ),
               child: Column(
@@ -280,7 +273,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                         color: Colors.red,
                       ),
                     ),
-                    leading: Icon(Icons.logout, color: Colors.black),
+                    leading: Icon(Icons.logout, color: darkmode?Colors.white:Colors.black),
                     onTap: () {},
                   ),
                   ListTile(
@@ -288,10 +281,10 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       'Hapus akun',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: darkmode?Colors.white:Colors.black,
                       ),
                     ),
-                    leading: Icon(Icons.person_remove, color: Colors.black),
+                    leading: Icon(Icons.person_remove, color: darkmode?Colors.white:Colors.black),
                     onTap: () {},
                   ),
                 ],

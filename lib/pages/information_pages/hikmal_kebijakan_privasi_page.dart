@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../chla_home_page.dart';
+
 class HikmalKebijakanPrivasiPage extends StatefulWidget {
   const HikmalKebijakanPrivasiPage({super.key});
 
@@ -13,7 +15,11 @@ class _HikmalKebijakanPrivasiPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
+      appBar: AppBar(
+        backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
+        iconTheme: IconThemeData(color: darkmode ? Colors.white : Colors.black),
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
         child: Container(
@@ -21,7 +27,7 @@ class _HikmalKebijakanPrivasiPageState
           decoration: BoxDecoration(
             boxShadow: [BoxShadow(blurRadius: 2, offset: Offset(2, 2))],
             borderRadius: BorderRadius.circular(20),
-            color: Colors.grey.shade300,
+            color: darkmode ? Colors.black : Colors.grey.shade300,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,16 +35,27 @@ class _HikmalKebijakanPrivasiPageState
             children: [
               Text(
                 'Kebijakan Privasi',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: darkmode ? Colors.white : Colors.black,
+                ),
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/images/ikon/kebijakanpriv.png', width: 40),
+                  Image.asset(
+                    'assets/images/ikon/kebijakanpriv.png',
+                    width: 40,
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: darkmode ? Colors.white : Colors.black,
+                      ),
                       'Kami menghargai privasi Anda. Privasi ini menjelaskan bagaimana kami mengumpulkan, mengggunakan, dan melindungi informasi Anda saat menggunakan aplikasi ini.',
                     ),
                   ),
@@ -47,7 +64,11 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/images/ikon/infopriv.png', width: 40),
+                  Image.asset(
+                    'assets/images/ikon/infopriv.png',
+                    width: 40,
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -58,10 +79,14 @@ class _HikmalKebijakanPrivasiPageState
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
                           ),
                         ),
                         Text(
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
                           'Kami dapat mengumpulkan data seperti nama, email, informasi profile, data perangkat, dan informasi penggunaan aplikasi.',
                         ),
                       ],
@@ -73,7 +98,11 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/images/ikon/usedinfopriv.png', width: 40),
+                  Image.asset(
+                    'assets/images/ikon/usedinfopriv.png',
+                    width: 40,
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -84,10 +113,14 @@ class _HikmalKebijakanPrivasiPageState
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
                           ),
                         ),
                         Text(
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
                           'Data  yang kami kumpulkan digunakan untuk menyediakan, meningkatkan, dan mengembangkan layanan serta pengalaman pengguna.',
                         ),
                       ],
@@ -99,7 +132,11 @@ class _HikmalKebijakanPrivasiPageState
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/images/ikon/privdata.png', width: 40),
+                  Image.asset(
+                    'assets/images/ikon/privdata.png',
+                    width: 40,
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
@@ -110,10 +147,14 @@ class _HikmalKebijakanPrivasiPageState
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
                           ),
                         ),
                         Text(
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
                           'Kami menerapkan  langkah - langkah yang sesuai untuk melindungi data Anda dari akses yang tidak sah, kehilangan, atau penyalahgunaan.',
                         ),
                       ],
