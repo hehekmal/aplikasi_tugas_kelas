@@ -43,6 +43,8 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
     DropdownMenuEntry(value: 18, label: 'X TKR 2'),
     DropdownMenuEntry(value: 19, label: 'X TKR 3'),
     DropdownMenuEntry(value: 20, label: 'X TKR 4'),
+    DropdownMenuEntry(value: 20, label: 'X ANM 1'),
+    DropdownMenuEntry(value: 20, label: 'X ANM 2'),
   ];
   @override
   Widget build(BuildContext context) {
