@@ -40,7 +40,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                 child: Container(
                   width: 100,
                   height: 100,
-                  color: darkmode?Colors.white:Colors.black,
+                  color: darkmode ? Colors.white : Colors.black,
                   padding: EdgeInsets.all(3),
                   child: ClipOval(
                     child: Image.asset("assets/images/carmen.png"),
@@ -52,14 +52,15 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                 onPressed: () {
                   showModalBottomSheet(
                     context: context,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(30),
-                      ),
-                    ),
                     builder: (context) {
-                      return Container(color: darkmode ? Colors.grey.shade900 : Colors.grey.shade200,
+                      return Container(
                         padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: darkmode
+                              ? Colors.grey.shade900
+                              : Colors.grey.shade200,
+                          borderRadius: BorderRadiusGeometry.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
+                        ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -204,9 +205,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
               ),
               SizedBox(height: 10),
               TextField(
-                style: TextStyle(
-                  color: darkmode ? Colors.white : Colors.black,
-                ),
+                style: TextStyle(color: darkmode ? Colors.white : Colors.black),
                 decoration: InputDecoration(
                   hintText:
                       "Write a short description about who you are or what your account is about",
