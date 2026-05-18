@@ -109,7 +109,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                     children: [
                       ClipOval(
                         child: Container(
-                          color: Colors.white,
+                          color: darkmode?Colors.white:Colors.black,
                           padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
