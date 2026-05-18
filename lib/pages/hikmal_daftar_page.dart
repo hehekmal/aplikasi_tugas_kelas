@@ -235,7 +235,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                               HikmalAccountModel(
                                 nama: nama.text,
                                 email: email.text,
-                                password: password.text,
+                                password: password.text, kelas: kelas.text,
                               ),
                             );
                             Navigator.pushReplacement(

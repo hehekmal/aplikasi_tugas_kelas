@@ -327,7 +327,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                         context: context,
                         builder: (context) => AlertDialog(
                           backgroundColor: Colors.grey,
-                          title: Text('Kamu yakin akan menghapus akun ini?'),
+                          title: Text('Anda yakin ingin menghapus akun ini?'),
                           actions: [
                             ElevatedButton(
                               onPressed: () {

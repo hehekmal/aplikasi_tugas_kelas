@@ -133,7 +133,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                               color: Colors.deepPurple.shade200,
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: Text("Class of X RPL 1"),
+                            child: Text("Class of ${accounts[widget.id].kelas}"),
                           ),
                           SizedBox(height: 10),
                         ],
