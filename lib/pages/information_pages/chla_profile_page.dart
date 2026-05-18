@@ -19,13 +19,16 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
         centerTitle: true,
         title: Text(
           "Edit Profile",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: darkmode ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -37,7 +40,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                 child: Container(
                   width: 100,
                   height: 100,
-                  color: Colors.black,
+                  color: darkmode?Colors.white:Colors.black,
                   padding: EdgeInsets.all(3),
                   child: ClipOval(
                     child: Image.asset("assets/images/carmen.png"),
@@ -51,23 +54,33 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     context: context,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(20),
+                        top: Radius.circular(30),
                       ),
                     ),
                     builder: (context) {
-                      return Container(
+                      return Container(color: darkmode ? Colors.grey.shade900 : Colors.grey.shade200,
                         padding: EdgeInsets.all(20),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             ListTile(
                               leading: Icon(Icons.camera_alt),
-                              title: Text("Ambil Foto"),
+                              title: Text(
+                                "Ambil Foto",
+                                style: TextStyle(
+                                  color: darkmode ? Colors.white : Colors.black,
+                                ),
+                              ),
                               onTap: () {},
                             ),
                             ListTile(
                               leading: Icon(Icons.photo),
-                              title: Text("Galeri"),
+                              title: Text(
+                                "Galeri",
+                                style: TextStyle(
+                                  color: darkmode ? Colors.white : Colors.black,
+                                ),
+                              ),
                               onTap: () {},
                             ),
                           ],
@@ -89,7 +102,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                   boxShadow: [
                     BoxShadow(blurRadius: 1, offset: Offset(1.5, 1.5)),
                   ],
-                  color: Colors.grey.shade200,
+                  color: darkmode ? Colors.black : Colors.grey.shade200,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(
@@ -97,11 +110,19 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Nama"),
+                        Text(
+                          "Nama",
+                          style: TextStyle(
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
+                        ),
                         Container(
                           width: 200,
                           height: 40,
                           child: TextField(
+                            style: TextStyle(
+                              color: darkmode ? Colors.white : Colors.black,
+                            ),
                             controller: nama,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -118,8 +139,18 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Email"),
-                        Text("chladiola@gmail.com"),
+                        Text(
+                          "Email",
+                          style: TextStyle(
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
+                        ),
+                        Text(
+                          "chladiola@gmail.com",
+                          style: TextStyle(
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
+                        ),
                         SizedBox(),
                       ],
                     ),
@@ -127,10 +158,20 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Password"),
+                        Text(
+                          "Password",
+                          style: TextStyle(
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
+                        ),
                         Row(
                           children: [
-                            Text(lihat ? "chlastruick" : "************"),
+                            Text(
+                              lihat ? "chlastruick" : "************",
+                              style: TextStyle(
+                                color: darkmode ? Colors.white : Colors.black,
+                              ),
+                            ),
                           ],
                         ),
                         IconButton(
@@ -151,14 +192,26 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                 ),
               ),
               SizedBox(height: 20),
-              Row(children: [Text("Basic Info")]),
+              Row(
+                children: [
+                  Text(
+                    "Basic Info",
+                    style: TextStyle(
+                      color: darkmode ? Colors.white : Colors.black,
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 10),
               TextField(
+                style: TextStyle(
+                  color: darkmode ? Colors.white : Colors.black,
+                ),
                 decoration: InputDecoration(
                   hintText:
                       "Write a short description about who you are or what your account is about",
                   hintStyle: TextStyle(color: Colors.grey),
-                  fillColor: Colors.grey.shade200,
+                  fillColor: darkmode ? Colors.black : Colors.grey.shade200,
                   filled: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
