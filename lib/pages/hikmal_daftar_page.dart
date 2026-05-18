@@ -19,6 +19,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   TextEditingController kelas = TextEditingController();
   late String kelaspilihan = 'kelas';
   bool? ketuaKelas = false;
+  bool akunAda = false;
   int a = 0;
   int cekKetua = 0;
   List<DropdownMenuEntry<int>> pilihkelas = [
@@ -160,6 +161,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                         ),
                       ),
                     ),
+                    Row(children: [akunAda?Text('akun sudah ada',style: TextStyle(color: Colors.red),):Container()],),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,7 +227,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                         setState(() {
                           for (int i = 0; i < accounts.length; i++) {
                             if (nama.text == accounts[i].nama) {
-                              a = a;
+                              a = a+0;
                             } else {
                               a = a+1;
                             }
@@ -245,6 +247,10 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                                     ChlaHomePage(id: accounts.length-1),
                               ),
                             );
+                            a = 0;
+                          }else{
+                            akunAda=true;
+                            a = 0;
                           }
                         });
                       },

@@ -20,16 +20,16 @@ List<ChlaSubjectModel> mapel = [
     iconMapel: Icons.computer,
     tugas: informatika,
   ),
-  ChlaSubjectModel(namaMapel: "IPAS", iconMapel: Icons.science, tugas: []),
+  ChlaSubjectModel(namaMapel: "IPAS", iconMapel: Icons.science, tugas: ipas),
   ChlaSubjectModel(
     namaMapel: "Matematika",
     iconMapel: Icons.percent,
-    tugas: [],
+    tugas: matematika,
   ),
   ChlaSubjectModel(
     namaMapel: "Bahasa Indonesia",
     iconMapel: Icons.flag,
-    tugas: [],
+    tugas: bIndonesia,
   ),
   ChlaSubjectModel(
     namaMapel: "Seni Budaya",
