@@ -22,10 +22,11 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
             children: [
               SizedBox(height: 20),
               Image.asset(
-                "assets/images/book.png",
+                darkmode?
+                "assets/images/whitebook.png":
+                "assets/images/blackbook.png",
                 width: 300,
-                height: 150,
-                fit: BoxFit.cover,
+                height: 150
               ),
               Text(
                 "Tugas Kelas",
