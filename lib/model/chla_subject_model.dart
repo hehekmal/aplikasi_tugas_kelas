@@ -34,11 +34,11 @@ List<ChlaSubjectModel> mapel = [
   ChlaSubjectModel(
     namaMapel: "Seni Budaya",
     iconMapel: CupertinoIcons.paintbrush_fill,
-    tugas: [],
+    tugas: seniBudaya,
   ),
   ChlaSubjectModel(
     namaMapel: "Agama",
     iconMapel: CupertinoIcons.moon_fill,
-    tugas: [],
+    tugas: agama,
   ),
 ];
