@@ -94,6 +94,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                           ),
                                         ),
                                       ),
+                                      SizedBox(height: 10,),
                                       ElevatedButton(
                                         onPressed: () {
                                           setState(() {
