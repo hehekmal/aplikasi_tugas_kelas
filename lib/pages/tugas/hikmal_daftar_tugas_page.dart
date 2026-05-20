@@ -101,7 +101,8 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                     child: Text(
                                       widget.tugas[i].selesai
                                           ? 'Complete'
-                                          : 'Incomplete',style: TextStyle(color: Colors.white),
+                                          : 'Incomplete',
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                   ),
                                 ),

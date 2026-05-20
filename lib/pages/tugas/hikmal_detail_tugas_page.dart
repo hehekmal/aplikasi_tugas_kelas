@@ -48,7 +48,8 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
           'Tugas',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
-      ),backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
+      ),
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,7 +97,12 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                     },
                     activeColor: Colors.green,
                   ),
-                  Text('Selesai',style: TextStyle(color: darkmode?Colors.white:Colors.black),),
+                  Text(
+                    'Selesai',
+                    style: TextStyle(
+                      color: darkmode ? Colors.white : Colors.black,
+                    ),
+                  ),
                 ],
               ),
             ),

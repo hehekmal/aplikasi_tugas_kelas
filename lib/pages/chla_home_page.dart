@@ -5,10 +5,11 @@ import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
 
-bool darkmode=false;
+bool darkmode = false;
+
 class ChlaHomePage extends StatefulWidget {
   final int id;
-  const ChlaHomePage({super.key, required this.id, });
+  const ChlaHomePage({super.key, required this.id});
 
   @override
   State<ChlaHomePage> createState() => _ChlaHomePageState();
@@ -18,7 +19,8 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
+    return Scaffold(
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       drawer: Drawer(
         backgroundColor: Colors.indigo,
         child: Padding(
@@ -47,7 +49,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HikmalSettingsPage(id: widget.id,),
+                      builder: (context) => HikmalSettingsPage(id: widget.id),
                     ),
                   );
                 },
@@ -109,7 +111,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                     children: [
                       ClipOval(
                         child: Container(
-                          color: darkmode?Colors.white:Colors.black,
+                          color: darkmode ? Colors.white : Colors.black,
                           padding: EdgeInsets.all(2),
                           child: ClipOval(
                             child: Image.asset(
@@ -120,7 +122,8 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                         ),
                       ),
                       SizedBox(width: 10),
-                      Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -133,7 +136,9 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                               color: Colors.deepPurple.shade200,
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: Text("Class of ${accounts[widget.id].kelas}"),
+                            child: Text(
+                              "Class of ${accounts[widget.id].kelas}",
+                            ),
                           ),
                           SizedBox(height: 10),
                         ],

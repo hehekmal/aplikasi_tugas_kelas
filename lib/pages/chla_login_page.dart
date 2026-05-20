@@ -11,7 +11,7 @@ class ChlaLoginPage extends StatefulWidget {
 }
 
 class _ChlaLoginPageState extends State<ChlaLoginPage> {
-  bool salah=false;
+  bool salah = false;
   TextEditingController nama = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
@@ -90,7 +90,16 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                         ),
                       ),
                     ),
-                    Row(children: [salah?Text('Login Gagal', style: TextStyle(color: Colors.red),):Container()],)
+                    Row(
+                      children: [
+                        salah
+                            ? Text(
+                                'Login Gagal',
+                                style: TextStyle(color: Colors.red),
+                              )
+                            : Container(),
+                      ],
+                    ),
                   ],
                 ),
                 Row(
@@ -118,13 +127,12 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ChlaHomePage(id: i,),
+                                builder: (context) => ChlaHomePage(id: i),
                               ),
                             );
-                          }else {
+                          } else {
                             setState(() {
-                              salah=true;
-
+                              salah = true;
                             });
                           }
                         }

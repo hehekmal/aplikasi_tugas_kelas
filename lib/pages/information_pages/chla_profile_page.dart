@@ -59,7 +59,10 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                           color: darkmode
                               ? Colors.grey.shade900
                               : Colors.grey.shade200,
-                          borderRadius: BorderRadiusGeometry.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
+                          borderRadius: BorderRadiusGeometry.only(
+                            topRight: Radius.circular(20),
+                            topLeft: Radius.circular(20),
+                          ),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,

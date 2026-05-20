@@ -12,6 +12,7 @@ class TaskModel {
   });
 }
 
+//XRPL1
 List<TaskModel> informatika = [
   TaskModel(
     judul: 'Tugas Flowchart',
@@ -109,3 +110,6 @@ List<TaskModel> bIndonesia = [
     tanggal: '18/05/2026',
   ),
 ];
+List<TaskModel>seniBudaya=[];
+List<TaskModel>agama=[];
+

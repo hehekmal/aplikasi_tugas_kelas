@@ -11,7 +11,8 @@ class ChlaFeedbackPage extends StatefulWidget {
 class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: darkmode?Colors.grey.shade900:Colors.white,
+    return Scaffold(
+      backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       appBar: AppBar(
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
@@ -30,10 +31,14 @@ class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
                 ),
               ],
             ),
-            TextField(style: TextStyle(color: darkmode?Colors.white:Colors.black),
+            TextField(
+              style: TextStyle(color: darkmode ? Colors.white : Colors.black),
               decoration: InputDecoration(
-                hintText: "tulis disini...",hintStyle: TextStyle(color: darkmode?Colors.grey.shade500:Colors.grey.shade700),
-                fillColor: darkmode?Colors.black:Colors.grey,
+                hintText: "tulis disini...",
+                hintStyle: TextStyle(
+                  color: darkmode ? Colors.grey.shade500 : Colors.grey.shade700,
+                ),
+                fillColor: darkmode ? Colors.black : Colors.grey,
                 filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

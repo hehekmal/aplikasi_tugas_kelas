@@ -163,7 +163,16 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                         ),
                       ),
                     ),
-                    Row(children: [akunAda?Text('akun sudah ada',style: TextStyle(color: Colors.red),):Container()],),
+                    Row(
+                      children: [
+                        akunAda
+                            ? Text(
+                                'akun sudah ada',
+                                style: TextStyle(color: Colors.red),
+                              )
+                            : Container(),
+                      ],
+                    ),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -229,29 +238,31 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                         setState(() {
                           for (int i = 0; i < accounts.length; i++) {
                             if (nama.text == accounts[i].nama) {
-                              a = a+0;
+                              a = a + 0;
                             } else {
-                              a = a+1;
+                              a = a + 1;
                             }
                           }
-                          if (a ==accounts.length && password.text == passwordConfirm.text) {
+                          if (a == accounts.length &&
+                              password.text == passwordConfirm.text) {
                             accounts.add(
                               HikmalAccountModel(
                                 nama: nama.text,
                                 email: email.text,
-                                password: password.text, kelas: kelas.text,
+                                password: password.text,
+                                kelas: kelas.text,
                               ),
                             );
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    ChlaHomePage(id: accounts.length-1),
+                                    ChlaHomePage(id: accounts.length - 1),
                               ),
                             );
                             a = 0;
-                          }else{
-                            akunAda=true;
+                          } else {
+                            akunAda = true;
                             a = 0;
                           }
                         });

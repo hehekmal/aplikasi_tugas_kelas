@@ -13,7 +13,8 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
-      appBar: AppBar(iconTheme: IconThemeData(color: darkmode?Colors.white:Colors.black),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: darkmode ? Colors.white : Colors.black),
         backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       ),
       body: SingleChildScrollView(
@@ -22,11 +23,11 @@ class _ChlaAboutApplicationState extends State<ChlaAboutApplication> {
             children: [
               SizedBox(height: 20),
               Image.asset(
-                darkmode?
-                "assets/images/whitebook.png":
-                "assets/images/blackbook.png",
+                darkmode
+                    ? "assets/images/whitebook.png"
+                    : "assets/images/blackbook.png",
                 width: 300,
-                height: 150
+                height: 150,
               ),
               Text(
                 "Tugas Kelas",
