@@ -1,16 +1,20 @@
 import 'package:aplikasi_tugas_kelas/model/chla_subject_model.dart';
+import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
 import 'package:aplikasi_tugas_kelas/model/hikmal_task_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_detail_tugas_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HikmalDaftarTugasPage extends StatefulWidget {
+  final int id;
   final String judul;
   final int mapelId;
   final List<TaskModel> tugas;
 
   const HikmalDaftarTugasPage({
     super.key,
+    required this.id,
     required this.judul,
     required this.tugas,
     required this.mapelId,
@@ -21,6 +25,8 @@ class HikmalDaftarTugasPage extends StatefulWidget {
 }
 
 class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
+  TextEditingController judul = TextEditingController();
+  TextEditingController isiTugas = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -40,6 +46,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Tugas',
@@ -49,6 +56,71 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                       fontSize: 20,
                     ),
                   ),
+                  accounts[widget.id].ketuaKelas
+                      ? IconButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                backgroundColor: Colors.grey,
+                                title: Container(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        'Judul:',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Container(
+                                        width: 200,
+                                        child: TextField(
+                                          controller: judul,
+                                          decoration: InputDecoration(
+                                            fillColor: Colors.white,
+                                            filled: true,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        'isi tugas:',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Container(
+                                        width: 300,
+                                        child: TextField(
+                                          controller: isiTugas,
+                                          decoration: InputDecoration(
+                                            fillColor: Colors.white,
+                                            filled: true,
+                                          ),
+                                        ),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            widget.tugas.add(
+                                              TaskModel(
+                                                judul: judul.text,
+                                                selesai: false,
+                                                isiTugas: isiTugas.text,
+                                                tanggal: '02/02/2026',
+                                              ),
+                                            );
+                                          });
+                                        },
+                                        child: Text('Tambahkan'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            CupertinoIcons.plus_circle,
+                            color: darkmode ? Colors.white : Colors.black,
+                          ),
+                        )
+                      : Container(),
                 ],
               ),
             ),
@@ -70,7 +142,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                           builder: (context) => HikmalDetailTugasPage(
                             tugas: widget.tugas[i],
                             mapelId: widget.mapelId,
-                            id: i,
+                            id: widget.id,
                           ),
                         ),
                       );
