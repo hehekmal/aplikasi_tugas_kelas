@@ -27,7 +27,10 @@ class _ChlaFeedbackPageState extends State<ChlaFeedbackPage> {
               children: [
                 Text(
                   "Berikan masukan anda",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                 ),
               ],
             ),
