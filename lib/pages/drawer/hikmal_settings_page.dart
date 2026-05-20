@@ -7,8 +7,7 @@ import 'package:aplikasi_tugas_kelas/pages/information_pages/hikmal_kebijakan_pr
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/hikmal_account_model.dart';
-import '../../model/service/account_service.dart';
+import '../../model/service/hikmal_account_service.dart';
 
 class HikmalSettingsPage extends StatefulWidget {
   final int id;
