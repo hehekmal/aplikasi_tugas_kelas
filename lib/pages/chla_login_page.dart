@@ -12,6 +12,7 @@ class ChlaLoginPage extends StatefulWidget {
 
 class _ChlaLoginPageState extends State<ChlaLoginPage> {
   bool salah = false;
+  bool pw = true;
   TextEditingController nama = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
@@ -78,7 +79,20 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                     ),
                     TextField(
                       controller: password,
+                      obscureText: pw,
                       decoration: InputDecoration(
+                        suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              pw = !pw;
+                            });
+                          },
+                          icon: Icon(
+                            pw
+                                ? Icons.remove_red_eye
+                                : Icons.remove_red_eye_outlined,
+                          ),
+                        ),
                         filled: true,
                         fillColor: Colors.grey.shade200,
                         border: OutlineInputBorder(
