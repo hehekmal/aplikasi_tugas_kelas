@@ -1,7 +1,8 @@
-import 'package:aplikasi_tugas_kelas/model/hikmal_account_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';
 import 'package:flutter/material.dart';
+
+import '../model/service/account_service.dart';
 
 class ChlaLoginPage extends StatefulWidget {
   const ChlaLoginPage({super.key});

@@ -13,20 +13,3 @@ class HikmalAccountModel {
     required this.ketuaKelas,
   });
 }
-
-List<HikmalAccountModel> accounts = [
-  HikmalAccountModel(
-    nama: 'hikmal',
-    email: 'hek@gmail.com',
-    password: 'h',
-    kelas: 'X RPL 1',
-    ketuaKelas: true,
-  ),
-  HikmalAccountModel(
-    nama: 'chladiola',
-    email: 'chla@gmail.com',
-    password: 'c',
-    kelas: 'X RPL 1',
-    ketuaKelas: false,
-  ),
-];
