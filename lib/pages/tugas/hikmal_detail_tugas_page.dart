@@ -35,7 +35,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 builder: (context) => HikmalDaftarTugasPage(
                   judul: 'Informatika',
                   mapelId: widget.mapelId,
-                  tugas: mapel[widget.mapelId].tugas,
+                  tugas: mapel[widget.mapelId].tugas, id: widget.id,
                 ),
               ),
             );

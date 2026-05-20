@@ -20,8 +20,8 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   late String kelaspilihan = 'kelas';
   bool? ketuaKelas = false;
   bool akunAda = false;
-  int a = 0;
   int cekKetua = 0;
+  int a = 0;
   List<DropdownMenuEntry<int>> pilihkelas = [
     DropdownMenuEntry(value: 0, label: 'X RPL 1'),
     DropdownMenuEntry(value: 1, label: 'X RPL 2'),
@@ -251,6 +251,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                                 email: email.text,
                                 password: password.text,
                                 kelas: kelas.text,
+                                ketuaKelas: ketuaKelas!,
                               ),
                             );
                             Navigator.pushReplacement(

@@ -171,6 +171,7 @@ class _ChlaHomePageState extends State<ChlaHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => HikmalDaftarTugasPage(
+                                id: widget.id,
                                 judul: mapel[c].namaMapel,
                                 tugas: mapel[c].tugas,
                                 mapelId: c,
