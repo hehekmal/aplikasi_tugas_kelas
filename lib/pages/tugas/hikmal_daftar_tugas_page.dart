@@ -32,12 +32,16 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.blueAccent),
+        backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
         title: Text(
           widget.judul,
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: darkmode ? Colors.white : Colors.black,
+          ),
         ),
+        centerTitle: true,
       ),
       backgroundColor: darkmode ? Colors.grey.shade900 : Colors.white,
       body: SingleChildScrollView(
@@ -57,68 +61,74 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                     ),
                   ),
                   accounts[widget.id].ketuaKelas
-                      ? IconButton(
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) => AlertDialog(
-                                backgroundColor: Colors.grey,
-                                title: Container(
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Judul:',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      Container(
-                                        width: 200,
-                                        child: TextField(
-                                          controller: judul,
-                                          decoration: InputDecoration(
-                                            fillColor: Colors.white,
-                                            filled: true,
+                      ? Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withValues(alpha: 0.5),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  backgroundColor: Colors.grey,
+                                  title: Container(
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'Judul:',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Container(
+                                          width: 200,
+                                          child: TextField(
+                                            controller: judul,
+                                            decoration: InputDecoration(
+                                              fillColor: Colors.white,
+                                              filled: true,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Text(
-                                        'isi tugas:',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      Container(
-                                        width: 300,
-                                        child: TextField(
-                                          controller: isiTugas,
-                                          decoration: InputDecoration(
-                                            fillColor: Colors.white,
-                                            filled: true,
+                                        Text(
+                                          'isi tugas:',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        Container(
+                                          width: 300,
+                                          child: TextField(
+                                            controller: isiTugas,
+                                            decoration: InputDecoration(
+                                              fillColor: Colors.white,
+                                              filled: true,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      SizedBox(height: 10,),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            widget.tugas.add(
-                                              TaskModel(
-                                                judul: judul.text,
-                                                selesai: false,
-                                                isiTugas: isiTugas.text,
-                                                tanggal: '02/02/2026',
-                                              ),
-                                            );
-                                          });
-                                        },
-                                        child: Text('Tambahkan'),
-                                      ),
-                                    ],
+                                        SizedBox(height: 10),
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              widget.tugas.add(
+                                                TaskModel(
+                                                  judul: judul.text,
+                                                  selesai: false,
+                                                  isiTugas: isiTugas.text,
+                                                  tanggal: '02/02/2026',
+                                                ),
+                                              );
+                                            });
+                                          },
+                                          child: Text('Tambahkan'),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                          icon: Icon(
-                            CupertinoIcons.plus_circle,
-                            color: darkmode ? Colors.white : Colors.black,
+                              );
+                            },
+                            icon: Icon(
+                              CupertinoIcons.plus,
+                              color: darkmode ? Colors.white : Colors.black,
+                            ),
                           ),
                         )
                       : Container(),
@@ -129,11 +139,8 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
               height: size.height,
               width: size.width,
               padding: EdgeInsets.all(10),
-              child: GridView.builder(
+              child: ListView.builder(
                 itemCount: widget.tugas.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
                 itemBuilder: (context, i) {
                   return GestureDetector(
                     onTap: () {
@@ -150,48 +157,63 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                       );
                     },
                     child: Card(
-                      color: Colors.blue.shade900,
+                      color: Colors.blue,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  widget.tugas[i].judul,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Card(
-                                  color: widget.tugas[i].selesai
-                                      ? Colors.green
-                                      : Colors.red,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2),
-                                    child: Text(
-                                      widget.tugas[i].selesai
-                                          ? 'Complete'
-                                          : 'Incomplete',
-                                      style: TextStyle(color: Colors.white),
+                        padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
+                        child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade100,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.tugas[i].judul,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  widget.tugas[i].tanggal,
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Text(
+                                    widget.tugas[i].isiTugas,
+                                    overflow: TextOverflow.fade,
+                                    maxLines: 1,
+                                  ),
+                                  Card(
+                                    color: widget.tugas[i].selesai
+                                        ? Colors.green
+                                        : Colors.red,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2),
+                                      child: Text(
+                                        widget.tugas[i].selesai
+                                            ? 'Complete'
+                                            : 'Incomplete',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    widget.tugas[i].tanggal,
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
