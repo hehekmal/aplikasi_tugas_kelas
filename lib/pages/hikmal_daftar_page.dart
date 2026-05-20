@@ -17,11 +17,16 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
   TextEditingController password = TextEditingController();
   TextEditingController passwordConfirm = TextEditingController();
   TextEditingController kelas = TextEditingController();
+
+  bool pwC = true;
+  bool pw = true;
+
   late String kelaspilihan = 'kelas';
   bool? ketuaKelas = false;
   bool akunAda = false;
   int cekKetua = 0;
   int a = 0;
+
   List<DropdownMenuEntry<int>> pilihkelas = [
     DropdownMenuEntry(value: 0, label: 'X RPL 1'),
     DropdownMenuEntry(value: 1, label: 'X RPL 2'),
@@ -47,6 +52,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
     DropdownMenuEntry(value: 20, label: 'X ANM 1'),
     DropdownMenuEntry(value: 20, label: 'X ANM 2'),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,7 +134,20 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ),
                     TextField(
                       controller: password,
+                      obscureText: pw,
                       decoration: InputDecoration(
+                        suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              pw = !pw;
+                            });
+                          },
+                          icon: Icon(
+                            pw
+                                ? Icons.remove_red_eye
+                                : Icons.remove_red_eye_outlined,
+                          ),
+                        ),
                         filled: true,
                         fillColor: Colors.grey.shade200,
                         border: OutlineInputBorder(
@@ -151,7 +170,16 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     ),
                     TextField(
                       controller: passwordConfirm,
+                      obscureText: pwC,
                       decoration: InputDecoration(
+                        suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              pwC = !pwC;
+                            });
+                          },
+                          icon: Icon(Icons.remove_red_eye),
+                        ),
                         filled: true,
                         fillColor: Colors.grey.shade200,
                         border: OutlineInputBorder(
