@@ -1,7 +1,7 @@
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:flutter/material.dart';
-import '../model/hikmal_account_model.dart';
-import '../model/service/hikmal_account_service.dart';
+import '../models/hikmal_account_model.dart';
+import '../models/services/hikmal_account_service.dart';
 import 'chla_home_page.dart';
 
 class HikmalDaftarPage extends StatefulWidget {

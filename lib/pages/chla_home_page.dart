@@ -3,8 +3,8 @@ import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
 
-import '../model/service/hikmal_account_service.dart';
-import '../model/service/chla_subject_service.dart';
+import '../models/services/hikmal_account_service.dart';
+import '../models/services/chla_subject_service.dart';
 
 bool darkmode = false;
 

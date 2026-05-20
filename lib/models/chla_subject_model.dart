@@ -1,4 +1,4 @@
-import 'package:aplikasi_tugas_kelas/model/hikmal_task_model.dart';
+import 'package:aplikasi_tugas_kelas/models/hikmal_task_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

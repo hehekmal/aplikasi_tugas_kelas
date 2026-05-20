@@ -1,8 +1,8 @@
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../model/hikmal_task_model.dart';
-import '../../model/service/chla_subject_service.dart';
+import '../../models/hikmal_task_model.dart';
+import '../../models/services/chla_subject_service.dart';
 import '../chla_home_page.dart';
 
 class HikmalDetailTugasPage extends StatefulWidget {
