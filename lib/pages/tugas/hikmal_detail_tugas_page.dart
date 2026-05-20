@@ -10,11 +10,13 @@ class HikmalDetailTugasPage extends StatefulWidget {
   final TaskModel tugas;
   final int mapelId;
   final int id;
+  final String judul;
   const HikmalDetailTugasPage({
     super.key,
     required this.tugas,
     required this.mapelId,
     required this.id,
+    required this.judul,
   });
 
   @override
@@ -33,7 +35,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
               context,
               MaterialPageRoute(
                 builder: (context) => HikmalDaftarTugasPage(
-                  judul: 'Informatika',
+                  judul: widget.judul,
                   mapelId: widget.mapelId,
                   tugas: mapel[widget.mapelId].tugas,
                   id: widget.id,

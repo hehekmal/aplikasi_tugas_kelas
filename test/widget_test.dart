@@ -1,29 +1,154 @@
-import 'dart:io';
-
-void main() {
-  List<String> n = ['a1', 'aa2', 'aaa3'];
-  List<String> p = ['a', 'aa', 'aaa'];
-  stdout.write('nama: ');
-  String name = stdin.readLineSync()!;
-  stdout.write('password: ');
-  String password = stdin.readLineSync()!;
-  stdout.write('cpassword: ');
-  String cpassword = stdin.readLineSync()!;
-  int a = 0;
-  for (int i = 0; i < n.length; i++) {
-    print('i$i');
-    if (name == n[i]) {
-      a = a;
-    } else {
-      a = a + 1;
-    }
-    print('a$a');
-
-  }if(a==n.length&&password==cpassword){
-    p.add(name);
-    n.add(password);
-  }
-  print(n);
-  print(p);
-  print('nlength${n.length}');
-}
+//XRPL2
+List<TaskModel>informatikaxrpl2=[];
+List<TaskModel>ipasxrpl2=[];
+List<TaskModel>matematikaxrpl2=[];
+List<TaskModel>indonesiaxrpl2=[];
+List<TaskModel>seniBudayaxrpl2=[];
+List<TaskModel>agamaxrpl2=[];
+//XTKJ1
+List<TaskModel>informatikaxtkj1=[];
+List<TaskModel>ipasxtkj1=[];
+List<TaskModel>matematikaxtkj1=[];
+List<TaskModel>indonesiaxtkj1=[];
+List<TaskModel>seniBudayaxtkj1=[];
+List<TaskModel>agamaxtkj1=[];
+//XTKJ2
+List<TaskModel>informatikaxtkj2=[];
+List<TaskModel>ipasxtkj2=[];
+List<TaskModel>matematikaxtkj2=[];
+List<TaskModel>indonesiaxtkj2=[];
+List<TaskModel>seniBudayaxtkj2=[];
+List<TaskModel>agamaxtkj2=[];
+//XTKJ3
+List<TaskModel>informatikaxtkj3=[];
+List<TaskModel>ipasxtkj3=[];
+List<TaskModel>matematikaxtkj3=[];
+List<TaskModel>indonesiaxtkj3=[];
+List<TaskModel>seniBudayaxtkj3=[];
+List<TaskModel>agamaxtkj3=[];
+//XTKJ4
+List<TaskModel>informatikaxtkj4=[];
+List<TaskModel>ipasxtkj4=[];
+List<TaskModel>matematikaxtkj4=[];
+List<TaskModel>indonesiaxtkj4=[];
+List<TaskModel>seniBudayaxtkj4=[];
+List<TaskModel>agamaxtkj4=[];
+//XSIJA
+List<TaskModel>informatikaxsija=[];
+List<TaskModel>ipasxsija=[];
+List<TaskModel>matematikaxsija=[];
+List<TaskModel>indonesiaxsija=[];
+List<TaskModel>seniBudayaxsija=[];
+List<TaskModel>agamaxsija=[];
+//XDPIB
+List<TaskModel>informatikaxdpib=[];
+List<TaskModel>ipasxdpib=[];
+List<TaskModel>matematikaxdpib=[];
+List<TaskModel>indonesiaxdpib=[];
+List<TaskModel>seniBudayaxdpib=[];
+List<TaskModel>agamaxdpib=[];
+//XLPKC1
+List<TaskModel>informatikaxlpkc1=[];
+List<TaskModel>ipasxlpkc1=[];
+List<TaskModel>matematikaxlpkc1=[];
+List<TaskModel>indonesiaxlpkc1=[];
+List<TaskModel>seniBudayaxlpkc1=[];
+List<TaskModel>agamaxlpkc1=[];
+//XLPKC2
+List<TaskModel>informatikaxlpkc2=[];
+List<TaskModel>ipasxlpkc2=[];
+List<TaskModel>matematikaxlpkc2=[];
+List<TaskModel>indonesiaxlpkc2=[];
+List<TaskModel>seniBudayaxlpkc2=[];
+List<TaskModel>agamaxlpkc2=[];
+//XLPKC3
+List<TaskModel>informatikaxlpkc3=[];
+List<TaskModel>ipasxlpkc3=[];
+List<TaskModel>matematikaxlpkc3=[];
+List<TaskModel>indonesiaxlpkc3=[];
+List<TaskModel>seniBudayaxlpkc3=[];
+List<TaskModel>agamaxlpkc3=[];
+//XLPKC4
+List<TaskModel>informatikaxlpkc4=[];
+List<TaskModel>ipasxlpkc4=[];
+List<TaskModel>matematikaxlpkc4=[];
+List<TaskModel>indonesiaxlpkc4=[];
+List<TaskModel>seniBudayaxlpkc4=[];
+List<TaskModel>agamaxlpkc4=[];
+//XDKV1
+List<TaskModel>informatikaxdkv1=[];
+List<TaskModel>ipasxdkv1=[];
+List<TaskModel>matematikaxdkv1=[];
+List<TaskModel>indonesiaxdkv1=[];
+List<TaskModel>seniBudayaxdkv1=[];
+List<TaskModel>agamaxdkv1=[];
+//XDKV2
+List<TaskModel>informatikaxdkv2=[];
+List<TaskModel>ipasxdkv2=[];
+List<TaskModel>matematikaxdkv2=[];
+List<TaskModel>indonesiaxdkv2=[];
+List<TaskModel>seniBudayaxdkv2=[];
+List<TaskModel>agamaxdkv2=[];
+//XDKV3
+List<TaskModel>informatikaxdkv3=[];
+List<TaskModel>ipasxdkv3=[];
+List<TaskModel>matematikaxdkv3=[];
+List<TaskModel>indonesiaxdkv3=[];
+List<TaskModel>seniBudayaxdkv3=[];
+List<TaskModel>agamaxdkv3=[];
+//XTSM1
+List<TaskModel>informatikaxtsm1=[];
+List<TaskModel>ipasxtsm1=[];
+List<TaskModel>matematikaxtsm1=[];
+List<TaskModel>indonesiaxtsm1=[];
+List<TaskModel>seniBudayaxtsm1=[];
+List<TaskModel>agamaxtsm1=[];
+//XTSM2
+List<TaskModel>informatikaxtsm2=[];
+List<TaskModel>ipasxtsm2=[];
+List<TaskModel>matematikaxtsm2=[];
+List<TaskModel>indonesiaxtsm2=[];
+List<TaskModel>seniBudayaxtsm2=[];
+List<TaskModel>agamaxtsm2=[];
+//XTKR1
+List<TaskModel>informatikaxtkr1=[];
+List<TaskModel>ipasxtkr1=[];
+List<TaskModel>matematikaxtkr1=[];
+List<TaskModel>indonesiaxtkr1=[];
+List<TaskModel>seniBudayaxtkr1=[];
+List<TaskModel>agamaxtkr1=[];
+//XTKR2
+List<TaskModel>informatikaxtkr2=[];
+List<TaskModel>ipasxtkr2=[];
+List<TaskModel>matematikaxtkr2=[];
+List<TaskModel>indonesiaxtkr2=[];
+List<TaskModel>seniBudayaxtkr2=[];
+List<TaskModel>agamaxtkr2=[];
+//XTKR3
+List<TaskModel>informatikaxtkr3=[];
+List<TaskModel>ipasxtkr3=[];
+List<TaskModel>matematikaxtkr3=[];
+List<TaskModel>indonesiaxtkr3=[];
+List<TaskModel>seniBudayaxtkr3=[];
+List<TaskModel>agamaxtkr3=[];
+//XTKR4
+List<TaskModel>informatikaxtkr4=[];
+List<TaskModel>ipasxtkr4=[];
+List<TaskModel>matematikaxtkr4=[];
+List<TaskModel>indonesiaxtkr4=[];
+List<TaskModel>seniBudayaxtkr4=[];
+List<TaskModel>agamaxtkr4=[];
+//XANM1
+List<TaskModel>informatikaxanm1=[];
+List<TaskModel>ipasxanm1=[];
+List<TaskModel>matematikaxanm1=[];
+List<TaskModel>indonesiaxanm1=[];
+List<TaskModel>seniBudayaxanm1=[];
+List<TaskModel>agamaxanm1=[];
+//XANM2
+List<TaskModel>informatikaxanm2=[];
+List<TaskModel>ipasxanm2=[];
+List<TaskModel>matematikaxanm2=[];
+List<TaskModel>indonesiaxanm2=[];
+List<TaskModel>seniBudayaxanm2=[];
+List<TaskModel>agamaxanm2=[];

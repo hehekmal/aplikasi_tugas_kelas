@@ -143,6 +143,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                             tugas: widget.tugas[i],
                             mapelId: widget.mapelId,
                             id: widget.id,
+                            judul: widget.judul,
                           ),
                         ),
                       );
