@@ -178,7 +178,11 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                               pwC = !pwC;
                             });
                           },
-                          icon: Icon(Icons.remove_red_eye),
+                          icon: Icon(
+                            pwC
+                                ? Icons.remove_red_eye
+                                : Icons.remove_red_eye_outlined,
+                          ),
                         ),
                         filled: true,
                         fillColor: Colors.grey.shade200,
