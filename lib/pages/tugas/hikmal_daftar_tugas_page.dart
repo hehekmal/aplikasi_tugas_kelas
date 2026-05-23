@@ -161,31 +161,47 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(4, 0, 0, 0),
                         child: Container(
-                          height: 200,
+                          height: 120,
                           decoration: BoxDecoration(
                             color: Colors.blue.shade100,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Column(
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    widget.tugas[i].judul,
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  Text(
-                                    widget.tugas[i].isiTugas,
-                                    overflow: TextOverflow.fade,
-                                    maxLines: 1,
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Card(color: Colors.blue.shade400,
+                                        child: Padding(
+                                          padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                                          child: Text(
+                                            widget.tugas[i].judul,
+                                            style: TextStyle(
+                                              color: Colors.blue.shade900,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: size.width * 0.5,
+                                        child: Text(
+                                          widget.tugas[i].isiTugas,
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 2,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   Card(
                                     color: widget.tugas[i].selesai
