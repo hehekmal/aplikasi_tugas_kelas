@@ -93,7 +93,7 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                     style: TextStyle(color: Colors.white),
                   ),
                   leading: Icon(Icons.settings, color: Colors.black),
-                  tileColor: Colors.blue.shade400,
+                  tileColor: Colors.lightBlueAccent,
                 ),
               ),
               SizedBox(height: 10),
@@ -117,7 +117,7 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                     style: TextStyle(color: Colors.white),
                   ),
                   leading: Icon(Icons.message, color: Colors.black),
-                  tileColor: Colors.blue.shade400,
+                  tileColor: Colors.lightBlueAccent,
                 ),
               ),
             ],
@@ -144,9 +144,9 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        warnaprofil ? Colors.blue.shade900 : Colors.blue,
-                        warnaprofil ? Colors.blue : Colors.blue.shade800,
-                        warnaprofil ? Colors.blue : Colors.blue.shade800,
+                        warnaprofil ? Colors.blue.shade900 : Colors.blueAccent,
+                        warnaprofil ? Colors.blueAccent : Colors.blue.shade900,
+                        warnaprofil ? Colors.blue.shade900 : Colors.blueAccent,
                       ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -224,7 +224,7 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                           style: TextStyle(color: Colors.white),
                         ),
                         leading: Icon(mapel[c].iconMapel, color: Colors.black),
-                        tileColor: Colors.blue.shade700,
+                        tileColor: Colors.blue.shade900,
                         onTap: () {
                           Navigator.push(
                             context,

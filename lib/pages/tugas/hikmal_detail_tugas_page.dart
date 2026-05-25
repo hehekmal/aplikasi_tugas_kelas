@@ -97,12 +97,12 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.shade300,
+                  color: darkmode?Colors.grey.shade800:Colors.grey.shade300,
                 ),
                 padding: EdgeInsets.all(20),
                 child: Text(
                   widget.tugas.isiTugas,
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: darkmode?Colors.white:Colors.black),
                 ),
               ),
               Padding(
@@ -135,7 +135,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 padding: const EdgeInsets.all(5),
                 child: Text(
                   widget.tugas.selesai
-                      ? 'MISSION COMPLETED!'
+                      ? 'MISSION PASSED!'
                       : 'MISSION FAILED!',
                   style: TextStyle(color: Colors.black.withValues(alpha: 0.5),fontSize: 20),
                 ),

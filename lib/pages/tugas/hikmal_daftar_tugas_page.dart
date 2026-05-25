@@ -187,7 +187,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                       child: Container(
                         height: 120,
                         decoration: BoxDecoration(
-                          color: Colors.blue.shade50,
+                          color: darkmode?Colors.grey.shade800:Colors.blue.shade50,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(blurRadius: 2, offset: Offset(1, 1)),
@@ -208,7 +208,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                     Text(
                                       widget.tugas[i].judul,
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: darkmode?Colors.white:Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15,
                                       ),
