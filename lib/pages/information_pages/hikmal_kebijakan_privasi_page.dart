@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../chla_home_page.dart';
+import '../hikmal_home_page.dart';
 
 class HikmalKebijakanPrivasiPage extends StatefulWidget {
   const HikmalKebijakanPrivasiPage({super.key});

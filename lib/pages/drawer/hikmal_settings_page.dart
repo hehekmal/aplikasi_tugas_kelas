@@ -1,4 +1,4 @@
-import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/hikmal_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_about_application.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_profile_page.dart';
@@ -28,7 +28,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => ChlaHomePage(id: widget.id),
+                builder: (context) => HikmalHomePage(id: widget.id),
               ),
             );
           },

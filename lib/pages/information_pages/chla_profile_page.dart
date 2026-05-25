@@ -1,5 +1,5 @@
 import 'package:aplikasi_tugas_kelas/models/hikmal_account_model.dart';
-import 'package:aplikasi_tugas_kelas/pages/chla_home_page.dart';
+import 'package:aplikasi_tugas_kelas/pages/hikmal_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:flutter/material.dart';
 
