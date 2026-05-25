@@ -62,162 +62,227 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Daftar',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 50,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              children: [Text('Nama', style: TextStyle(color: Colors.black))],
-            ),
-            TextField(
-              controller: nama,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey.shade200,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [Text('Email', style: TextStyle(color: Colors.black))],
-            ),
-            TextField(
-              controller: email,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey.shade200,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Text('Password', style: TextStyle(color: Colors.black)),
-              ],
-            ),
-            TextField(
-              controller: password,
-              obscureText: pw,
-              decoration: InputDecoration(
-                suffix: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pw = !pw;
-                    });
-                  },
-                  icon: Icon(
-                    pw ? Icons.remove_red_eye : Icons.remove_red_eye_outlined,
-                  ),
-                ),
-                filled: true,
-                fillColor: Colors.grey.shade200,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Row(
+            Column(
               children: [
                 Text(
-                  'Konfirmasi Password',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ],
-            ),
-            TextField(
-              controller: passwordConfirm,
-              obscureText: pwC,
-              decoration: InputDecoration(
-                suffix: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pwC = !pwC;
-                    });
-                  },
-                  icon: Icon(
-                    pwC ? Icons.remove_red_eye : Icons.remove_red_eye_outlined,
+                  'Daftar',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                filled: true,
-                fillColor: Colors.grey.shade200,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                akunAda
-                    ? Text(
-                        'akun sudah ada',
-                        style: TextStyle(color: Colors.red),
-                      )
-                    : Container(),
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+                SizedBox(height: 10),
                 Row(
                   children: [
-                    Checkbox(
-                      value: ketuaKelas,
-                      onChanged: (value) {
-                        setState(() {
-                          ketuaKelas = value;
-                        });
-                      },
-                      activeColor: Colors.green,
-                    ),
-                    Text('Ketua Kelas', style: TextStyle(color: Colors.black)),
+                    SizedBox(width: 25),
+                    Text('Nama:', style: TextStyle(color: Colors.black)),
                   ],
                 ),
-                DropdownMenu(
-                  menuHeight: 200,
-                  textStyle: TextStyle(color: Colors.white),
-                  inputDecorationTheme: InputDecorationTheme(
-                    suffixIconColor: Colors.white,
-                    filled: true,
-                    fillColor: Colors.deepPurple.shade900,
-                    hintStyle: TextStyle(color: Colors.white),
+                Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(13),
+                      bottomLeft: Radius.circular(13),
+                      topRight: Radius.circular(13),
+                    ),
                   ),
-                  dropdownMenuEntries: pilihkelas,
-                  hintText: 'Kelas',
-                  controller: kelas,
-                  onSelected: (value) {
-                    setState(() {
-                      kelaspilihan = kelas.text;
-                    });
-                  },
+                  child: TextField(
+                    controller: nama,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
+                Row(
+                  children: [
+                    SizedBox(width: 25),
+                    Text('Email:', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(13),
+                      bottomLeft: Radius.circular(13),
+                      topRight: Radius.circular(13),
+                    ),
+                  ),
+                  child: TextField(
+                    controller: email,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    SizedBox(width: 25),
+                    Text('Password:', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(13),
+                      bottomLeft: Radius.circular(13),
+                      topRight: Radius.circular(13),
+                    ),
+                  ),
+                  child: TextField(
+                    controller: password,
+                    obscureText: pw,
+                    decoration: InputDecoration(
+                      suffix: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            pw = !pw;
+                          });
+                        },
+                        icon: Icon(
+                          pw
+                              ? Icons.remove_red_eye
+                              : Icons.remove_red_eye_outlined,
+                        ),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    SizedBox(width: 25),
+                    Text(
+                      'Konfirmasi Password:',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(13),
+                      bottomLeft: Radius.circular(13),
+                      topRight: Radius.circular(13),
+                    ),
+                  ),
+                  child: TextField(
+                    controller: passwordConfirm,
+                    obscureText: pwC,
+                    decoration: InputDecoration(
+                      suffix: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            pwC = !pwC;
+                          });
+                        },
+                        icon: Icon(
+                          pwC
+                              ? Icons.remove_red_eye
+                              : Icons.remove_red_eye_outlined,
+                        ),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    akunAda
+                        ? Text(
+                            'akun sudah ada',
+                            style: TextStyle(color: Colors.red),
+                          )
+                        : Container(),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: ketuaKelas,
+                          onChanged: (value) {
+                            setState(() {
+                              ketuaKelas = value;
+                            });
+                          },
+                          activeColor: Colors.green,
+                        ),
+                        Text(
+                          'Ketua Kelas',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    DropdownMenu(
+                      menuHeight: 200,
+                      textStyle: TextStyle(color: Colors.white),
+                      inputDecorationTheme: InputDecorationTheme(
+                        suffixIconColor: Colors.white,
+                        filled: true,
+                        fillColor: Colors.deepPurple.shade900,
+                        hintStyle: TextStyle(color: Colors.white),
+                      ),
+                      dropdownMenuEntries: pilihkelas,
+                      hintText: 'Kelas',
+                      controller: kelas,
+                      onSelected: (value) {
+                        setState(() {
+                          kelaspilihan = kelas.text;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(height: 30),
               ],
             ),
-            SizedBox(height: 30),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

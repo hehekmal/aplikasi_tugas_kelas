@@ -44,16 +44,27 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       ),
                     ],
                   ),
-                  TextField(
-                    controller: nama,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.grey.shade200,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
+                  Container(
+                    padding: EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(13),
+                        bottomLeft: Radius.circular(13),
+                        topRight: Radius.circular(13),
+                      ),
+                    ),
+                    child: TextField(
+                      controller: nama,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
+                        border: OutlineInputBorder(borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
                         ),
                       ),
                     ),
@@ -64,29 +75,41 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       Text('Password:', style: TextStyle(color: Colors.black)),
                     ],
                   ),
-                  TextField(
-                    controller: password,
-                    obscureText: pw,
-                    decoration: InputDecoration(
-                      suffix: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            pw = !pw;
-                          });
-                        },
-                        icon: Icon(
-                          pw
-                              ? Icons.remove_red_eye
-                              : Icons.remove_red_eye_outlined,
-                        ),
+                  Container(
+                    padding: EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(13),
+                        topRight: Radius.circular(13),
+                        bottomRight: Radius.circular(13),
                       ),
-                      filled: true,
-                      fillColor: Colors.grey.shade200,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
+                    ),
+                    child: TextField(
+                      controller: password,
+                      obscureText: pw,
+                      decoration: InputDecoration(
+                        suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              pw = !pw;
+                            });
+                          },
+                          icon: Icon(
+                            pw
+                                ? Icons.remove_red_eye
+                                : Icons.remove_red_eye_outlined,
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade200,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
                         ),
                       ),
                     ),
