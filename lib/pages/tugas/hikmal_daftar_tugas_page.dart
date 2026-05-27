@@ -142,6 +142,8 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                                 tanggal: '02/02/2026',
                                               ),
                                             );
+                                            judul=TextEditingController(text: '');
+                                            isiTugas=TextEditingController(text: '');
                                           });
                                         },
                                         child: Text('Tambahkan'),
@@ -219,7 +221,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                         widget.tugas[i].isiTugas,
                                         overflow: TextOverflow.fade,
                                         maxLines: 4,
-                                        style: TextStyle(fontSize: 9),
+                                        style: TextStyle(fontSize: 9,color: darkmode?Colors.white:Colors.black),
                                       ),
                                     ),
                                   ],

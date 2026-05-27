@@ -294,7 +294,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                     );
                   },
                   child: Text(
-                    'login?',
+                    'Login?',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,

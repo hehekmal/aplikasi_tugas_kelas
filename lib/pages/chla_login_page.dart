@@ -139,7 +139,7 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       );
                     },
                     child: Text(
-                      'daftar?',
+                      'Daftar?',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

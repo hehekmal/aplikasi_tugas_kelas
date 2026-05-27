@@ -23,7 +23,7 @@ class _TulasapState extends State<Tulasap> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ChlaLoginPage(),
+      home: HikmalLoadingPage(),
       debugShowCheckedModeBanner: false,
     );
   }
