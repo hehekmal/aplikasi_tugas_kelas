@@ -59,7 +59,8 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey.shade200,
-                        border: OutlineInputBorder(borderSide: BorderSide.none,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(10),
                             topRight: Radius.circular(10),
@@ -155,7 +156,10 @@ class _ChlaLoginPageState extends State<ChlaLoginPage> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HikmalHomePage(id: i),
+                              builder: (context) => HikmalHomePage(
+                                id: i,
+                                kelasId: accounts[i].kelasId,
+                              ),
                             ),
                           );
                         } else {

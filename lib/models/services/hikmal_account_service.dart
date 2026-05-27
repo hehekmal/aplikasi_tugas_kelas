@@ -6,13 +6,13 @@ List<HikmalAccountModel> accounts = [
     email: 'hek@gmail.com',
     password: 'h',
     kelas: 'X RPL 1',
-    ketuaKelas: true,
+    ketuaKelas: true, kelasId: 0,
   ),
   HikmalAccountModel(
     nama: 'chladiola',
     email: 'chla@gmail.com',
     password: 'c',
     kelas: 'X RPL 1',
-    ketuaKelas: false,
+    ketuaKelas: false, kelasId: 0,
   ),
 ];

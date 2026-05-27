@@ -11,6 +11,7 @@ class HikmalDaftarTugasPage extends StatefulWidget {
   final String judul;
   final int mapelId;
   final List<TaskModel> tugas;
+  final int kelasId;
 
   const HikmalDaftarTugasPage({
     super.key,
@@ -18,6 +19,7 @@ class HikmalDaftarTugasPage extends StatefulWidget {
     required this.judul,
     required this.tugas,
     required this.mapelId,
+    required this.kelasId,
   });
 
   @override
@@ -89,7 +91,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                             ),
                                           ),
                                           Container(
-                                            width: size.width *0.55,
+                                            width: size.width * 0.55,
                                             child: TextField(
                                               minLines: 1,
                                               maxLines: 2,
@@ -118,7 +120,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                             ),
                                           ),
                                           Container(
-                                            width: size.width  *0.55,
+                                            width: size.width * 0.55,
                                             child: TextField(
                                               maxLines: null,
                                               controller: isiTugas,
@@ -142,8 +144,12 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                                 tanggal: '02/02/2026',
                                               ),
                                             );
-                                            judul=TextEditingController(text: '');
-                                            isiTugas=TextEditingController(text: '');
+                                            judul = TextEditingController(
+                                              text: '',
+                                            );
+                                            isiTugas = TextEditingController(
+                                              text: '',
+                                            );
                                           });
                                         },
                                         child: Text('Tambahkan'),
@@ -182,6 +188,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                               mapelId: widget.mapelId,
                               id: widget.id,
                               judul: widget.judul,
+                              kelasId: widget.kelasId,
                             ),
                           ),
                         );
@@ -189,7 +196,9 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                       child: Container(
                         height: 120,
                         decoration: BoxDecoration(
-                          color: darkmode?Colors.grey.shade800:Colors.blue.shade50,
+                          color: darkmode
+                              ? Colors.grey.shade800
+                              : Colors.blue.shade50,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(blurRadius: 2, offset: Offset(1, 1)),
@@ -210,7 +219,9 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                     Text(
                                       widget.tugas[i].judul,
                                       style: TextStyle(
-                                        color: darkmode?Colors.white:Colors.black,
+                                        color: darkmode
+                                            ? Colors.white
+                                            : Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15,
                                       ),
@@ -221,7 +232,12 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                                         widget.tugas[i].isiTugas,
                                         overflow: TextOverflow.fade,
                                         maxLines: 4,
-                                        style: TextStyle(fontSize: 9,color: darkmode?Colors.white:Colors.black),
+                                        style: TextStyle(
+                                          fontSize: 9,
+                                          color: darkmode
+                                              ? Colors.white
+                                              : Colors.black,
+                                        ),
                                       ),
                                     ),
                                   ],

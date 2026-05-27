@@ -3,6 +3,7 @@ class HikmalAccountModel {
   final String email;
   late String password;
   final String kelas;
+  final int kelasId;
   final bool ketuaKelas;
 
   HikmalAccountModel({
@@ -10,6 +11,7 @@ class HikmalAccountModel {
     required this.email,
     required this.password,
     required this.kelas,
+    required this.kelasId,
     required this.ketuaKelas,
   });
 }

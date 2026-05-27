@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/models/services/hikmal_kelas_service.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:flutter/material.dart';
 import '../models/hikmal_account_model.dart';
@@ -20,38 +21,13 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
 
   bool pwC = true;
   bool pw = true;
-
+  late String salah = 'akun sudah ada';
   late String kelaspilihan = 'kelas';
   bool? ketuaKelas = false;
   bool akunAda = false;
   int cekKetua = 0;
   int a = 0;
-
-  List<DropdownMenuEntry<int>> pilihkelas = [
-    DropdownMenuEntry(value: 0, label: 'X RPL 1'),
-    DropdownMenuEntry(value: 1, label: 'X RPL 2'),
-    DropdownMenuEntry(value: 2, label: 'X TKJ 1'),
-    DropdownMenuEntry(value: 3, label: 'X TKJ 2'),
-    DropdownMenuEntry(value: 4, label: 'X TKJ 3'),
-    DropdownMenuEntry(value: 5, label: 'X TKJ 4'),
-    DropdownMenuEntry(value: 6, label: 'X SIJA'),
-    DropdownMenuEntry(value: 7, label: 'X DPIB'),
-    DropdownMenuEntry(value: 8, label: 'X LPKC 1'),
-    DropdownMenuEntry(value: 9, label: 'X LPKC 2'),
-    DropdownMenuEntry(value: 10, label: 'X LPKC 3'),
-    DropdownMenuEntry(value: 11, label: 'X LPKC 4'),
-    DropdownMenuEntry(value: 12, label: 'X DKV 1'),
-    DropdownMenuEntry(value: 13, label: 'X DKV 2'),
-    DropdownMenuEntry(value: 14, label: 'X DKV 3'),
-    DropdownMenuEntry(value: 15, label: 'X TSM 1'),
-    DropdownMenuEntry(value: 16, label: 'X TSM 2'),
-    DropdownMenuEntry(value: 17, label: 'X TKR 1'),
-    DropdownMenuEntry(value: 18, label: 'X TKR 2'),
-    DropdownMenuEntry(value: 19, label: 'X TKR 3'),
-    DropdownMenuEntry(value: 20, label: 'X TKR 4'),
-    DropdownMenuEntry(value: 20, label: 'X ANM 1'),
-    DropdownMenuEntry(value: 20, label: 'X ANM 2'),
-  ];
+  late int indexKelas;
 
   @override
   Widget build(BuildContext context) {
@@ -232,10 +208,7 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                 Row(
                   children: [
                     akunAda
-                        ? Text(
-                            'akun sudah ada',
-                            style: TextStyle(color: Colors.red),
-                          )
+                        ? Text(salah, style: TextStyle(color: Colors.red))
                         : Container(),
                   ],
                 ),
@@ -269,11 +242,18 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                         fillColor: Colors.deepPurple.shade900,
                         hintStyle: TextStyle(color: Colors.white),
                       ),
-                      dropdownMenuEntries: pilihkelas,
+                      dropdownMenuEntries: [
+                        for (int k = 0; k < daftarKelas.length; k++)
+                          DropdownMenuEntry(
+                            value: k,
+                            label: daftarKelas[k].judul,
+                          ),
+                      ],
                       hintText: 'Kelas',
                       controller: kelas,
                       onSelected: (value) {
                         setState(() {
+                          indexKelas = value!;
                           kelaspilihan = kelas.text;
                         });
                       },
@@ -312,28 +292,38 @@ class _HikmalDaftarPageState extends State<HikmalDaftarPage> {
                           a = a + 1;
                         }
                       }
-                      if (a == accounts.length &&
-                          password.text == passwordConfirm.text) {
-                        accounts.add(
-                          HikmalAccountModel(
-                            nama: nama.text,
-                            email: email.text,
-                            password: password.text,
-                            kelas: kelas.text,
-                            ketuaKelas: ketuaKelas!,
-                          ),
-                        );
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                HikmalHomePage(id: accounts.length - 1),
-                          ),
-                        );
-                        a = 0;
-                      } else {
+                      if (kelas.text == '') {
                         akunAda = true;
                         a = 0;
+                        salah = 'kelas tidak boleh kosong';
+                      } else {
+                        if (a == accounts.length &&
+                            password.text == passwordConfirm.text) {
+                          accounts.add(
+                            HikmalAccountModel(
+                              nama: nama.text,
+                              email: email.text,
+                              password: password.text,
+                              kelas: kelas.text,
+                              kelasId: indexKelas,
+                              ketuaKelas: ketuaKelas!,
+                            ),
+                          );
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HikmalHomePage(
+                                id: accounts.length - 1,
+                                kelasId: indexKelas,
+                              ),
+                            ),
+                          );
+                          a = 0;
+                        } else {
+                          akunAda = true;
+                          a = 0;
+                          salah = 'akun sudah ada';
+                        }
                       }
                     });
                   },

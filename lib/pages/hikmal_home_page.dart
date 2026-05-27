@@ -4,15 +4,15 @@ import 'package:aplikasi_tugas_kelas/pages/drawer/chla_feedback_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/material.dart';
-
 import '../models/services/hikmal_account_service.dart';
-import '../models/services/chla_subject_service.dart';
+import '../models/services/hikmal_kelas_service.dart';
 
 bool darkmode = false;
 
 class HikmalHomePage extends StatefulWidget {
   final int id;
-  const HikmalHomePage({super.key, required this.id});
+  final int kelasId;
+  const HikmalHomePage({super.key, required this.id, required this.kelasId});
 
   @override
   State<HikmalHomePage> createState() => _HikmalHomePageState();
@@ -207,11 +207,11 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                   ],
                 ),
                 SizedBox(
-                  height: mapel.length * 65,
+                  height: daftarKelas[widget.kelasId].pelajaran.length * 65,
                   width: size.width,
                   child: ListView.builder(
                     scrollDirection: Axis.vertical,
-                    itemCount: mapel.length,
+                    itemCount: daftarKelas[widget.kelasId].pelajaran.length,
                     itemBuilder: (context, c) => Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
@@ -220,10 +220,13 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                           borderSide: BorderSide.none,
                         ),
                         title: Text(
-                          mapel[c].namaMapel,
+                          daftarKelas[widget.kelasId].pelajaran[c].namaMapel,
                           style: TextStyle(color: Colors.white),
                         ),
-                        leading: Icon(mapel[c].iconMapel, color: Colors.black),
+                        leading: Icon(
+                          daftarKelas[widget.kelasId].pelajaran[c].iconMapel,
+                          color: Colors.black,
+                        ),
                         tileColor: Colors.blue.shade900,
                         onTap: () {
                           Navigator.push(
@@ -231,9 +234,14 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                             MaterialPageRoute(
                               builder: (context) => HikmalDaftarTugasPage(
                                 id: widget.id,
-                                judul: mapel[c].namaMapel,
-                                tugas: mapel[c].tugas,
+                                judul: daftarKelas[widget.kelasId]
+                                    .pelajaran[c]
+                                    .namaMapel,
+                                tugas: daftarKelas[widget.kelasId]
+                                    .pelajaran[c]
+                                    .tugas,
                                 mapelId: c,
+                                kelasId: widget.kelasId,
                               ),
                             ),
                           );

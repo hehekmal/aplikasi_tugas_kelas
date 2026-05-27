@@ -28,7 +28,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => HikmalHomePage(id: widget.id),
+                builder: (context) => HikmalHomePage(id: widget.id, kelasId: accounts[widget.id].kelasId,),
               ),
             );
           },

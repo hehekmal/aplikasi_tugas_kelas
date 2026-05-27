@@ -2,7 +2,7 @@ import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../models/hikmal_task_model.dart';
-import '../../models/services/chla_subject_service.dart';
+import '../../models/services/hikmal_kelas_service.dart';
 import '../hikmal_home_page.dart';
 
 class HikmalDetailTugasPage extends StatefulWidget {
@@ -10,12 +10,13 @@ class HikmalDetailTugasPage extends StatefulWidget {
   final int mapelId;
   final int id;
   final String judul;
+  final int kelasId;
   const HikmalDetailTugasPage({
     super.key,
     required this.tugas,
     required this.mapelId,
     required this.id,
-    required this.judul,
+    required this.judul, required this.kelasId,
   });
 
   @override
@@ -36,8 +37,10 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 builder: (context) => HikmalDaftarTugasPage(
                   judul: widget.judul,
                   mapelId: widget.mapelId,
-                  tugas: mapel[widget.mapelId].tugas,
+                  tugas: daftarKelas[widget.kelasId]
+                      .pelajaran[widget.mapelId].tugas,
                   id: widget.id,
+                  kelasId: widget.kelasId,
                 ),
               ),
             );
