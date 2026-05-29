@@ -1,6 +1,7 @@
 import 'package:aplikasi_tugas_kelas/models/hikmal_task_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_detail_tugas_page.dart';
+import 'package:aplikasi_tugas_kelas/widget/semangat.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,8 @@ class HikmalDaftarTugasPage extends StatefulWidget {
 }
 
 class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
+  String judultxt = '';
+  String isiTugastxt = '';
   TextEditingController judul = TextEditingController();
   TextEditingController isiTugas = TextEditingController();
   @override
@@ -72,89 +75,158 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                             onPressed: () {
                               showDialog(
                                 context: context,
-                                builder: (context) => AlertDialog(
-                                  backgroundColor: Colors.blue,
-                                  title: Column(
-                                    children: [
-                                      Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                              'Judul:',
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 25,
+                                builder: (context) => Dialog(
+                                  backgroundColor: Colors.blue.shade900,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(
+                                                8.0,
+                                              ),
+                                              child: Text(
+                                                'Judul:',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 25,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Container(
-                                            width: size.width * 0.55,
-                                            child: TextField(
-                                              minLines: 1,
-                                              maxLines: 2,
-                                              controller: judul,
-                                              decoration: InputDecoration(
-                                                filled: true,
-                                                fillColor: Colors.white,
+                                            Container(
+                                              width: size.width * 0.55,
+                                              child: TextField(
+                                                minLines: 1,
+                                                maxLines: 2,
+                                                controller: judul,
+                                                decoration: InputDecoration(
+                                                  filled: true,
+                                                  fillColor: Colors.white,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(height: 10),
-                                      Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                              'Deskripsi:',
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
+                                          ],
+                                        ),
+                                        SizedBox(height: 10),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(
+                                                8.0,
+                                              ),
+                                              child: Text(
+                                                'Deskripsi:',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Container(
-                                            width: size.width * 0.55,
-                                            child: TextField(
-                                              maxLines: null,
-                                              controller: isiTugas,
-                                              decoration: InputDecoration(
-                                                filled: true,
-                                                fillColor: Colors.white,
+                                            Container(
+                                              width: size.width * 0.55,
+                                              child: TextField(
+                                                maxLines: null,
+                                                controller: isiTugas,
+                                                decoration: InputDecoration(
+                                                  filled: true,
+                                                  fillColor: Colors.white,
+                                                ),
                                               ),
                                             ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            '!: Judul atau deskripsi tidak boleh kosong',
+                                            style: TextStyle(
+                                              color: Colors.orange,fontSize: 15
+                                            ),
                                           ),
-                                        ],
-                                      ),
-                                      SizedBox(height: 10),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            widget.tugas.add(
-                                              TaskModel(
-                                                judul: judul.text,
-                                                selesai: false,
-                                                isiTugas: isiTugas.text,
-                                                tanggal: '02/02/2026',
+                                        ),
+                                        SizedBox(height: 10),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                if (judul.text == '' ||
+                                                    isiTugas.text == '') {
+                                                } else {
+                                                  setState(() {
+                                                    widget.tugas.add(
+                                                      TaskModel(
+                                                        judul: judul.text,
+                                                        selesai: false,
+                                                        isiTugas: isiTugas.text,
+                                                        tanggal: '02/02/2026',
+                                                      ),
+                                                    );
+                                                    judul =
+                                                        TextEditingController(
+                                                          text: '',
+                                                        );
+                                                    isiTugas =
+                                                        TextEditingController(
+                                                          text: '',
+                                                        );
+                                                    Navigator.pop(context);
+                                                  });
+                                                }
+                                              },
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    WidgetStatePropertyAll(
+                                                      Colors.blue,
+                                                    ),
                                               ),
-                                            );
-                                            judul = TextEditingController(
-                                              text: '',
-                                            );
-                                            isiTugas = TextEditingController(
-                                              text: '',
-                                            );
-                                          });
-                                        },
-                                        child: Text('Tambahkan'),
-                                      ),
-                                    ],
+                                              child: Text(
+                                                'Tambahkan',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                setState(() {
+                                                  judul = TextEditingController(
+                                                    text: '',
+                                                  );
+                                                  isiTugas =
+                                                      TextEditingController(
+                                                        text: '',
+                                                      );
+                                                });
+                                                Navigator.pop(context);
+                                              },
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    WidgetStatePropertyAll(
+                                                      Colors.blue,
+                                                    ),
+                                              ),
+                                              child: Text(
+                                                'Batal',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );
@@ -280,25 +352,7 @@ class _HikmalDaftarTugasPageState extends State<HikmalDaftarTugasPage> {
                 },
               ),
             ),
-            SizedBox(
-              child: Column(
-                children: [
-                  Image.asset('assets/images/yay.png', width: 100, height: 100),
-                  Text(
-                    'Semangat  Mengerjakan!',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  Text(
-                    'Kerjakan tugas tepat waktu ya!',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              ),
-            ),
+            Semangat()
           ],
         ),
       ),

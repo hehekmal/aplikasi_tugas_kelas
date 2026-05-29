@@ -1,8 +1,11 @@
 import 'dart:async';
 
+import 'package:aplikasi_tugas_kelas/models/chla_subject_model.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/chla_feedback_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/drawer/hikmal_settings_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/tugas/hikmal_daftar_tugas_page.dart';
+import 'package:aplikasi_tugas_kelas/widget/hikmal_home_profile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/services/hikmal_account_service.dart';
 import '../models/services/hikmal_kelas_service.dart';
@@ -19,24 +22,7 @@ class HikmalHomePage extends StatefulWidget {
 }
 
 class _HikmalHomePageState extends State<HikmalHomePage> {
-  late Timer warna;
-  bool warnaprofil = false;
-  @override
-  void initState() {
-    warna = Timer.periodic(Duration(seconds: 5), (timer) {
-      setState(() {
-        warnaprofil = !warnaprofil;
-      });
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    warna.cancel();
-    super.dispose();
-  }
-
+  TextEditingController tambahNamaMapel = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -136,65 +122,10 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                AnimatedContainer(
-                  duration: Duration(seconds: 2),
-                  padding: EdgeInsets.all(8.0),
-                  width: double.infinity,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        warnaprofil ? Colors.blue.shade900 : Colors.blueAccent,
-                        warnaprofil ? Colors.blueAccent : Colors.blue.shade900,
-                        warnaprofil ? Colors.blue.shade900 : Colors.blueAccent,
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                    borderRadius: BorderRadius.circular(70),
-                  ),
-                  child: Column(
-                    children: [
-                      ClipOval(
-                        child: Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(5),
-                          child: ClipOval(
-                            child: Image.asset(
-                              'assets/images/carmen.png',
-                              fit: BoxFit.fitHeight,
-                              height: 100,
-                              width: 100,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        accounts[widget.id].nama,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple.shade100,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Text(
-                          "Class of ${accounts[widget.id].kelas}",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                    ],
-                  ),
-                ),
+                HikmalHomeProfile(id: widget.id, kelasId: widget.kelasId),
                 SizedBox(height: 10),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Subjects',
@@ -204,6 +135,129 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                         color: darkmode ? Colors.white : Colors.black,
                       ),
                     ),
+                    accounts[widget.id].ketuaKelas
+                        ? IconButton(
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  backgroundColor: Colors.blue.shade900,
+                                  title: Column(
+                                    children: [
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              'Judul:',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 25,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.55,
+                                            child: TextField(
+                                              minLines: 1,
+                                              maxLines: 2,
+                                              controller: tambahNamaMapel,
+                                              decoration: InputDecoration(
+                                                filled: true,
+                                                fillColor: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          '!: Judul tidak boleh kosong',
+                                          style: TextStyle(
+                                            color: Colors.orange,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                if (tambahNamaMapel.text !=
+                                                    '') {
+                                                  daftarKelas[widget.kelasId]
+                                                      .pelajaran
+                                                      .add(
+                                                        ChlaSubjectModel(
+                                                          namaMapel:
+                                                              tambahNamaMapel
+                                                                  .text,
+                                                          iconMapel:
+                                                              Icons.circle,
+                                                          tugas: [],
+                                                        ),
+                                                      );
+                                                  tambahNamaMapel =
+                                                      TextEditingController(
+                                                        text: '',
+                                                      );
+                                                  Navigator.pop(context);
+                                                }
+                                              });
+                                            },
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  WidgetStatePropertyAll(
+                                                    Colors.blue,
+                                                  ),
+                                            ),
+                                            child: Text(
+                                              'Tambahkan',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                tambahNamaMapel =
+                                                    TextEditingController(
+                                                      text: '',
+                                                    );
+                                                Navigator.pop(context);
+                                              });
+                                            },
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  WidgetStatePropertyAll(
+                                                    Colors.blue,
+                                                  ),
+                                            ),
+                                            child: Text(
+                                              'Batal',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: Icon(CupertinoIcons.plus),
+                          )
+                        : Container(),
                   ],
                 ),
                 SizedBox(

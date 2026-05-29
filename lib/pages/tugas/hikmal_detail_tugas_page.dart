@@ -16,7 +16,8 @@ class HikmalDetailTugasPage extends StatefulWidget {
     required this.tugas,
     required this.mapelId,
     required this.id,
-    required this.judul, required this.kelasId,
+    required this.judul,
+    required this.kelasId,
   });
 
   @override
@@ -38,7 +39,8 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                   judul: widget.judul,
                   mapelId: widget.mapelId,
                   tugas: daftarKelas[widget.kelasId]
-                      .pelajaran[widget.mapelId].tugas,
+                      .pelajaran[widget.mapelId]
+                      .tugas,
                   id: widget.id,
                   kelasId: widget.kelasId,
                 ),
@@ -97,15 +99,17 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                   ),
                 ],
               ),
-              Container(
+              Container(width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: darkmode?Colors.grey.shade800:Colors.grey.shade300,
+                  color: darkmode ? Colors.grey.shade800 : Colors.grey.shade300,
                 ),
                 padding: EdgeInsets.all(20),
                 child: Text(
                   widget.tugas.isiTugas,
-                  style: TextStyle(color: darkmode?Colors.white:Colors.black),
+                  style: TextStyle(
+                    color: darkmode ? Colors.white : Colors.black,
+                  ),
                 ),
               ),
               Padding(
@@ -132,15 +136,18 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: widget.tugas.selesai ? Colors.greenAccent.shade400 : Colors.red,
+                  color: widget.tugas.selesai
+                      ? Colors.greenAccent.shade400
+                      : Colors.red,
                   borderRadius: BorderRadius.circular(5),
                 ),
                 padding: const EdgeInsets.all(5),
                 child: Text(
-                  widget.tugas.selesai
-                      ? 'MISSION PASSED!'
-                      : 'MISSION FAILED!',
-                  style: TextStyle(color: Colors.black.withValues(alpha: 0.5),fontSize: 20),
+                  widget.tugas.selesai ? 'MISSION PASSED!' : 'MISSION FAILED!',
+                  style: TextStyle(
+                    color: Colors.black.withValues(alpha: 0.5),
+                    fontSize: 20,
+                  ),
                 ),
               ),
               Row(

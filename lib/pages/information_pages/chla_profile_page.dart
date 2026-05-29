@@ -173,7 +173,7 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                         Row(
                           children: [
                             Text(
-                              lihat ? "chlastruick" : "************",
+                              lihat ? accounts[widget.id].password : "**********",
                               style: TextStyle(
                                 color: darkmode ? Colors.white : Colors.black,
                               ),
@@ -264,7 +264,13 @@ class _ChlaProfilePageState extends State<ChlaProfilePage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            HikmalSettingsPage(id: widget.id),
+                      ),
+                    );},
                     child: Text(
                       "Cancel",
                       style: TextStyle(color: Colors.grey.shade800),

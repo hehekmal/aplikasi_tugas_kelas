@@ -4,6 +4,7 @@ import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_about_applicat
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_profile_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/chla_syarat_dan_ketentuan.dart';
 import 'package:aplikasi_tugas_kelas/pages/information_pages/hikmal_kebijakan_privasi_page.dart';
+import 'package:aplikasi_tugas_kelas/widget/hikmal_setting_lainnya.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,10 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => HikmalHomePage(id: widget.id, kelasId: accounts[widget.id].kelasId,),
+                builder: (context) => HikmalHomePage(
+                  id: widget.id,
+                  kelasId: accounts[widget.id].kelasId,
+                ),
               ),
             );
           },
@@ -202,82 +206,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                 ),
               ),
             ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: darkmode ? Colors.black : Colors.grey.shade300,
-                boxShadow: [BoxShadow(offset: Offset(1.5, 1.5), blurRadius: 1)],
-              ),
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text(
-                      'Tentang Aplikasi',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: darkmode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    leading: Icon(
-                      Icons.question_mark,
-                      color: darkmode ? Colors.white : Colors.black,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChlaAboutApplication(),
-                        ),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Kebijakan Privasi',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: darkmode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    leading: Icon(
-                      Icons.fact_check_rounded,
-                      color: darkmode ? Colors.white : Colors.black,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HikmalKebijakanPrivasiPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Syarat & Ketentuan',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: darkmode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    leading: Icon(
-                      Icons.document_scanner_outlined,
-                      color: darkmode ? Colors.white : Colors.black,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChlaSyaratDanKetentuan(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
+            HikmalSettingLainnya(),
             SizedBox(height: 20),
             Container(
               width: double.infinity,
@@ -326,7 +255,7 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          backgroundColor: Colors.grey,
+                          backgroundColor: Colors.grey.shade300,
                           title: Text('Anda yakin ingin menghapus akun ini?'),
                           actions: [
                             ElevatedButton(
@@ -340,20 +269,14 @@ class _HikmalSettingsPageState extends State<HikmalSettingsPage> {
                                     builder: (context) => ChlaLoginPage(),
                                   ),
                                 );
-                              },
-                              child: Text('Ya'),
+                              },style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.black)) ,
+                              child: Text('Ya',style: TextStyle(color: Colors.white),),
                             ),
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        HikmalSettingsPage(id: widget.id),
-                                  ),
-                                );
-                              },
-                              child: Text('Tidak'),
+                                Navigator.pop(context);
+                              },style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.black)) ,
+                              child: Text('Tidak',style: TextStyle(color: Colors.white),),
                             ),
                           ],
                         ),

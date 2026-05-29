@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../chla_subject_model.dart';
 import '../hikmal_task_model.dart';
-import 'hikmal_task_service.dart';
 
 List<HikmalKelasModel> daftarKelas = [
   //X RPL 1
@@ -130,12 +129,12 @@ List<HikmalKelasModel> daftarKelas = [
       ChlaSubjectModel(
         namaMapel: "Seni Budaya",
         iconMapel: CupertinoIcons.paintbrush_fill,
-        tugas: seniBudaya,
+        tugas: [],
       ),
       ChlaSubjectModel(
         namaMapel: "Agama",
         iconMapel: CupertinoIcons.moon_fill,
-        tugas: agama,
+        tugas: [],
       ),
     ],
   ),
@@ -146,7 +145,7 @@ List<HikmalKelasModel> daftarKelas = [
       ChlaSubjectModel(
         namaMapel: "Bahasa Indonesia",
         iconMapel: Icons.flag,
-        tugas: bIndonesia,
+        tugas: [],
       ),
     ],
   ),
@@ -157,7 +156,7 @@ List<HikmalKelasModel> daftarKelas = [
       ChlaSubjectModel(
         namaMapel: "Bahasa Indonesia",
         iconMapel: Icons.flag,
-        tugas: bIndonesia,
+        tugas: [],
       ),
     ],
   ),
@@ -168,7 +167,7 @@ List<HikmalKelasModel> daftarKelas = [
       ChlaSubjectModel(
         namaMapel: "Bahasa Indonesia",
         iconMapel: Icons.flag,
-        tugas: bIndonesia,
+        tugas: [],
       ),
     ],
   ),
@@ -179,7 +178,7 @@ List<HikmalKelasModel> daftarKelas = [
       ChlaSubjectModel(
         namaMapel: "Bahasa Indonesia",
         iconMapel: Icons.flag,
-        tugas: bIndonesia,
+        tugas: [],
       ),
     ],
   ),
