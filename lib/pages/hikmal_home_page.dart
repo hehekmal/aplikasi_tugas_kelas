@@ -136,126 +136,137 @@ class _HikmalHomePageState extends State<HikmalHomePage> {
                       ),
                     ),
                     accounts[widget.id].ketuaKelas
-                        ? IconButton(
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  backgroundColor: Colors.blue.shade900,
-                                  title: Column(
-                                    children: [
-                                      Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                              'Judul:',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 25,
+                        ? Container(
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    backgroundColor: Colors.blue.shade900,
+                                    title: Column(
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(
+                                                8.0,
+                                              ),
+                                              child: Text(
+                                                'Nama:',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 25,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Container(
-                                            width: size.width * 0.55,
-                                            child: TextField(
-                                              minLines: 1,
-                                              maxLines: 2,
-                                              controller: tambahNamaMapel,
-                                              decoration: InputDecoration(
-                                                filled: true,
-                                                fillColor: Colors.white,
+                                            Container(
+                                              width: size.width * 0.55,
+                                              child: TextField(
+                                                minLines: 1,
+                                                maxLines: 2,
+                                                controller: tambahNamaMapel,
+                                                decoration: InputDecoration(
+                                                  filled: true,
+                                                  fillColor: Colors.white,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text(
-                                          '!: Judul tidak boleh kosong',
-                                          style: TextStyle(
-                                            color: Colors.orange,
-                                            fontSize: 15,
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            '!: Nama tidak boleh kosong',
+                                            style: TextStyle(
+                                              color: Colors.orange,
+                                              fontSize: 15,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      SizedBox(height: 10),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          ElevatedButton(
-                                            onPressed: () {
-                                              setState(() {
-                                                if (tambahNamaMapel.text !=
-                                                    '') {
-                                                  daftarKelas[widget.kelasId]
-                                                      .pelajaran
-                                                      .add(
-                                                        ChlaSubjectModel(
-                                                          namaMapel:
-                                                              tambahNamaMapel
-                                                                  .text,
-                                                          iconMapel:
-                                                              Icons.circle,
-                                                          tugas: [],
-                                                        ),
-                                                      );
+                                        SizedBox(height: 10),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                setState(() {
+                                                  if (tambahNamaMapel.text !=
+                                                      '') {
+                                                    daftarKelas[widget.kelasId]
+                                                        .pelajaran
+                                                        .add(
+                                                          ChlaSubjectModel(
+                                                            namaMapel:
+                                                                tambahNamaMapel
+                                                                    .text,
+                                                            iconMapel:
+                                                                Icons.circle,
+                                                            tugas: [],
+                                                          ),
+                                                        );
+                                                    tambahNamaMapel =
+                                                        TextEditingController(
+                                                          text: '',
+                                                        );
+                                                    Navigator.pop(context);
+                                                  }
+                                                });
+                                              },
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    WidgetStatePropertyAll(
+                                                      Colors.blue,
+                                                    ),
+                                              ),
+                                              child: Text(
+                                                'Tambahkan',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                setState(() {
                                                   tambahNamaMapel =
                                                       TextEditingController(
                                                         text: '',
                                                       );
                                                   Navigator.pop(context);
-                                                }
-                                              });
-                                            },
-                                            style: ButtonStyle(
-                                              backgroundColor:
-                                                  WidgetStatePropertyAll(
-                                                    Colors.blue,
-                                                  ),
-                                            ),
-                                            child: Text(
-                                              'Tambahkan',
-                                              style: TextStyle(
-                                                color: Colors.white,
+                                                });
+                                              },
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    WidgetStatePropertyAll(
+                                                      Colors.blue,
+                                                    ),
+                                              ),
+                                              child: Text(
+                                                'Batal',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          ElevatedButton(
-                                            onPressed: () {
-                                              setState(() {
-                                                tambahNamaMapel =
-                                                    TextEditingController(
-                                                      text: '',
-                                                    );
-                                                Navigator.pop(context);
-                                              });
-                                            },
-                                            style: ButtonStyle(
-                                              backgroundColor:
-                                                  WidgetStatePropertyAll(
-                                                    Colors.blue,
-                                                  ),
-                                            ),
-                                            child: Text(
-                                              'Batal',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              );
-                            },
-                            icon: Icon(CupertinoIcons.plus),
+                                );
+                              },
+                              icon: Icon(
+                                CupertinoIcons.plus,
+                                color: Colors.black,
+                              ),
+                            ),
                           )
                         : Container(),
                   ],

@@ -1,3 +1,4 @@
+import 'package:aplikasi_tugas_kelas/models/services/hikmal_kelas_service.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_home_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/chla_login_page.dart';
 import 'package:aplikasi_tugas_kelas/pages/hikmal_daftar_page.dart';

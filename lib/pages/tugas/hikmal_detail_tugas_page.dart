@@ -64,12 +64,13 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.blueGrey.shade900,
                 ),
                 padding: EdgeInsets.all(20),
-                child: Row(
+                child: Column(
                   children: [
                     Text(
                       widget.tugas.judul,
@@ -89,7 +90,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                     child: Card(
                       color: Colors.blue.shade900,
                       child: Padding(
-                        padding: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                         child: Text(
                           'Tugas',
                           style: TextStyle(color: Colors.white, fontSize: 10),
@@ -99,7 +100,8 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                   ),
                 ],
               ),
-              Container(width: double.infinity,
+              Container(
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: darkmode ? Colors.grey.shade800 : Colors.grey.shade300,
@@ -117,6 +119,10 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                 child: Row(
                   children: [
                     Checkbox(
+                      side: BorderSide(
+                        color: widget.tugas.selesai ? Colors.green : Colors.red,
+                        width: 2,
+                      ),
                       value: widget.tugas.selesai,
                       onChanged: (value) {
                         setState(() {
@@ -128,7 +134,7 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
                     Text(
                       'Selesai',
                       style: TextStyle(
-                        color: darkmode ? Colors.white : Colors.black,
+                        color: widget.tugas.selesai ? Colors.green : Colors.red,
                       ),
                     ),
                   ],
@@ -137,37 +143,41 @@ class _HikmalDetailTugasPageState extends State<HikmalDetailTugasPage> {
               Container(
                 decoration: BoxDecoration(
                   color: widget.tugas.selesai
-                      ? Colors.greenAccent.shade400
-                      : Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                      ? Colors.black.withGreen(255)
+                      : Colors.black.withRed(255),
+                  borderRadius: BorderRadius.circular(50),
                 ),
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(15),
                 child: Text(
                   widget.tugas.selesai ? 'MISSION PASSED!' : 'MISSION FAILED!',
                   style: TextStyle(
-                    color: Colors.black.withValues(alpha: 0.5),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black.withValues(alpha: 0.7),
                     fontSize: 20,
                   ),
                 ),
               ),
               Row(
                 children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                        bottomRight: Radius.circular(30),
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          widget.tugas.selesai
-                              ? 'assets/images/complete_react.png'
-                              : 'assets/images/incomplete_react.png',
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                          bottomRight: Radius.circular(30),
                         ),
-                        fit: BoxFit.cover,
+                        image: DecorationImage(
+                          image: AssetImage(
+                            widget.tugas.selesai
+                                ? 'assets/images/complete_react.png'
+                                : 'assets/images/incomplete_react.png',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
